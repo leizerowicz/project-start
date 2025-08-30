@@ -296,25 +296,28 @@ Create a unified methodology that combines both frameworks:
 ```
 I need you to act as a PACT framework expert and create a [PHASE] document for [PROJECT_DESCRIPTION] in an agentic development environment.
 
-**IMPORTANT: Before proceeding with documentation, you MUST first ask the user clarifying questions to understand the multi-agent context.**
+**IMPORTANT: Before proceeding with documentation, you MUST first check for existing project documents and ask the user clarifying questions to understand the multi-agent context.**
 
 Follow this process:
-1. **ASK THE USER**: Review the project and ask specific questions about:
+1. **CHECK FOR EXISTING DOCUMENTS**: Look for Phase 1 documents (BACKLOG.md, IMPLEMENTATION_GUIDE.md, RISK_ASSESSMENT.md, FILE_OUTLINE.md) and any existing SPARC documents
+2. **ASK THE USER**: Review the project and ask specific questions about:
+   - Whether existing documents are current and should inform agent coordination
    - How many agents will be involved and their roles
    - What types of coordination challenges are expected
    - What shared resources or dependencies exist
    - What level of autonomy each agent should have
-2. **WAIT FOR RESPONSES**: Do not proceed until the user provides agent-specific information
-3. **VALIDATE UNDERSTANDING**: Summarize the multi-agent environment and confirm it's correct
+3. **WAIT FOR RESPONSES**: Do not proceed until the user provides agent-specific information
+4. **VALIDATE UNDERSTANDING**: Summarize the multi-agent environment and existing documentation context, confirm it's correct
 
 Then follow the PACT [PHASE] template exactly, ensuring you:
-1. Design for agent autonomy while maintaining coordination
-2. Include specific agent coordination mechanisms
-3. Address multi-agent communication and decision-making
-4. Consider emergent behaviors and adaptive systems
-5. Include comprehensive validation of agent coordination
-6. Provide actionable coordination strategies
-7. Include thorough reflection on agent collaboration
+1. **Build on Existing Documentation**: Use Phase 1 documents and existing SPARC documents to inform coordination strategy
+2. Design for agent autonomy while maintaining coordination
+3. Include specific agent coordination mechanisms
+4. Address multi-agent communication and decision-making
+5. Consider emergent behaviors and adaptive systems
+6. Include comprehensive validation of agent coordination
+7. Provide actionable coordination strategies
+8. Include thorough reflection on agent collaboration
 
 Output should be a complete markdown document ready for multi-agent implementation.
 ```

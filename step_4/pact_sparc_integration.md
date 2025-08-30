@@ -135,22 +135,26 @@ SPARC: S → P → A → R → C
 ### Hybrid Phase Structure
 A new unified methodology that seamlessly blends both frameworks:
 
+**Note for Existing Projects**: If Phase 1 documents (BACKLOG.md, IMPLEMENTATION_GUIDE.md, etc.) already exist, consider starting from Phase 2 or modify Phase 1 to enhance existing documentation rather than creating from scratch.
+
 #### Phase 1: Collaborative Specification (SPARC-S + PACT-P)
 - **Duration**: [X days/weeks]
 - **Focus**: Requirements gathering with coordinated agents
+- **For Existing Projects**: Enhance existing Phase 1 documents with formal SPARC specification
 - **Key Activities**:
   - PACT agent ecosystem design
-  - Collaborative requirements analysis
+  - Collaborative requirements analysis (building on existing BACKLOG.md)
   - Coordination protocol establishment
   - Specification validation through multiple agents
 
 #### Phase 2: Coordinated Pseudocode (SPARC-P + PACT-A)  
 - **Duration**: [X days/weeks]
 - **Focus**: Algorithm design with real-time agent coordination
+- **For Existing Projects**: Can serve as starting point if Phase 1 documents are complete
 - **Key Activities**:
   - Coordinated algorithm development
   - Real-time collaboration on pseudocode
-  - Algorithm integration planning
+  - Algorithm integration planning (informed by existing IMPLEMENTATION_GUIDE.md)
   - Collaborative algorithm validation
 
 #### Phase 3: Integrated Architecture (SPARC-A + PACT-C)
@@ -160,7 +164,7 @@ A new unified methodology that seamlessly blends both frameworks:
   - Collaborative architecture design
   - Integration optimization
   - System coherence validation
-  - Architecture documentation coordination
+  - Architecture documentation coordination (building on existing FILE_OUTLINE.md if available)
 
 #### Phase 4: Collaborative Refinement (SPARC-R + PACT-T)
 - **Duration**: [X days/weeks]
@@ -169,7 +173,7 @@ A new unified methodology that seamlessly blends both frameworks:
   - Multi-agent quality improvement
   - Comprehensive system testing
   - Coordination effectiveness validation
-  - Quality metrics achievement
+  - Quality metrics achievement (addressing risks from existing RISK_ASSESSMENT.md if available)
 
 #### Phase 5: Coordinated Completion (SPARC-C + PACT Meta-Validation)
 - **Duration**: [X days/weeks]
@@ -183,6 +187,11 @@ A new unified methodology that seamlessly blends both frameworks:
 ## Implementation Guidelines
 
 ### Choosing the Right Integration Model
+
+#### For Projects with Existing Phase 1 Documents
+- **Recommended**: Model 1 (PACT as Meta-Framework) starting from Phase 2
+- **Rationale**: Existing documentation provides foundation, focus coordination on development phases
+- **Key Focus**: Validate existing documentation and coordinate development from pseudocode onward
 
 #### For Small Projects (1-3 Agents)
 - **Recommended**: Model 2 (PACT within SPARC phases)
@@ -202,10 +211,11 @@ A new unified methodology that seamlessly blends both frameworks:
 ### Implementation Steps
 
 #### Step 1: Assessment and Planning
-1. Analyze project complexity and agent requirements
-2. Choose appropriate integration model
-3. Design initial coordination strategy
-4. Plan integration validation approach
+1. **Check for existing documentation** (Phase 1 documents and any SPARC documents)
+2. Analyze project complexity and agent requirements
+3. Choose appropriate integration model (consider starting point based on existing docs)
+4. Design initial coordination strategy
+5. Plan integration validation approach
 
 #### Step 2: Framework Setup
 1. Establish PACT coordination infrastructure
@@ -224,6 +234,106 @@ A new unified methodology that seamlessly blends both frameworks:
 2. Monitor coordination and development effectiveness
 3. Continuously optimize integration approach
 4. Document learnings and best practices
+
+## Integration with Existing Projects
+
+### Detecting Existing Phase 1 Documentation
+When implementing PACT-SPARC integration, first check for existing project documentation:
+
+#### Phase 1 Documents (from Step 1)
+- **BACKLOG.md**: Prioritized features and requirements
+- **IMPLEMENTATION_GUIDE.md**: Technology stack and architecture overview
+- **RISK_ASSESSMENT.md**: Identified risks and mitigation strategies
+- **FILE_OUTLINE.md**: Project structure and organization
+
+#### Existing SPARC Documents
+- **SPARC Specification**: Detailed requirements and technical constraints
+- **SPARC Pseudocode**: Algorithm designs and logic flow
+- **SPARC Architecture**: System design and component interactions
+- **SPARC Refinement**: Testing strategy and quality improvements
+- **SPARC Completion**: Deployment and maintenance procedures
+
+### Integration Strategies for Existing Projects
+
+#### Scenario 1: Only Phase 1 Documents Exist
+**Recommended Approach**: Start integration at SPARC Phase 2 (Pseudocode)
+- Use Phase 1 documents to inform PACT Planning
+- Skip SPARC Specification creation (already covered by Phase 1 docs)
+- Begin with **PACT Action + SPARC Pseudocode** integration pattern
+
+**Modified Integration Process**:
+1. **PACT Planning**: Design agent coordination based on existing BACKLOG.md and IMPLEMENTATION_GUIDE.md
+2. **PACT Action + SPARC Pseudocode**: Agents collaboratively develop algorithms
+3. **PACT Coordination + SPARC Architecture**: Continue with standard integration
+4. **PACT Testing + SPARC Refinement**: Standard integration process
+5. **PACT Meta-Testing + SPARC Completion**: Final integration phase
+
+#### Scenario 2: Some SPARC Documents Exist
+**Recommended Approach**: Resume integration from the next incomplete phase
+- Assess which SPARC phases are complete
+- Design PACT coordination to support remaining phases
+- Start integration from first incomplete SPARC phase
+
+**Assessment Questions**:
+- Which SPARC phases are complete and current?
+- Do existing documents provide sufficient foundation for agent coordination?
+- What coordination mechanisms are needed for remaining phases?
+
+#### Scenario 3: Complete SPARC Documentation Exists
+**Recommended Approach**: Focus on PACT Meta-Testing and optimization
+- Review existing SPARC documents for coordination opportunities
+- Implement PACT coordination for optimization and enhancement
+- Focus on improving multi-agent collaboration within existing framework
+
+### Modified Integration Patterns for Existing Projects
+
+#### Pattern: PACT Planning + Existing Phase 1 Documents
+**When to Use**: Phase 1 documents exist but no SPARC Specification
+
+**Process**:
+1. **Document Review**: Analyze BACKLOG.md, IMPLEMENTATION_GUIDE.md, RISK_ASSESSMENT.md, FILE_OUTLINE.md
+2. **Agent Role Design**: Design agent roles based on existing documentation
+3. **Coordination Strategy**: Plan coordination for starting from SPARC Phase 2
+4. **Validation**: Ensure existing documents are sufficient foundation
+
+**Deliverables**:
+- PACT Agent Ecosystem Design (based on existing docs)
+- Coordination protocols for Pseudocode phase
+- Document sufficiency assessment
+
+#### Pattern: PACT Action + Enhanced SPARC Pseudocode
+**When to Use**: Starting SPARC from Phase 2 with existing Phase 1 foundation
+
+**Process**:
+1. **Foundation Review**: Use Phase 1 documents as algorithm design foundation
+2. **Coordinated Algorithm Development**: Agents develop pseudocode collaboratively
+3. **Integration with Existing Plans**: Ensure algorithms align with IMPLEMENTATION_GUIDE.md
+4. **Multi-Agent Validation**: Validate algorithmic consistency across agents
+
+**Deliverables**:
+- Enhanced SPARC Pseudocode (building on Phase 1 docs)
+- PACT coordination logs for algorithm development
+- Integration validation with existing planning
+
+### Best Practices for Existing Project Integration
+
+#### Document Assessment Best Practices
+1. **Completeness Check**: Verify existing documents cover all necessary areas
+2. **Currency Validation**: Confirm documents reflect current project state  
+3. **Gap Analysis**: Identify missing information not covered by existing docs
+4. **Quality Assessment**: Evaluate if existing documents meet SPARC/PACT standards
+
+#### Coordination Adaptation Best Practices
+1. **Respect Existing Decisions**: Build upon rather than replace existing planning
+2. **Fill Gaps Strategically**: Focus coordination on areas not covered by existing docs
+3. **Maintain Consistency**: Ensure new coordination aligns with existing constraints
+4. **Validate Frequently**: Check that integration honors existing project decisions
+
+#### Agent Role Assignment for Existing Projects
+1. **Leverage Existing Structure**: Use FILE_OUTLINE.md to inform agent responsibilities
+2. **Respect Technical Constraints**: Use IMPLEMENTATION_GUIDE.md to guide agent capabilities
+3. **Address Known Risks**: Use RISK_ASSESSMENT.md to assign risk mitigation responsibilities
+4. **Honor Feature Priorities**: Use BACKLOG.md to prioritize agent work allocation
 
 ## Success Metrics
 
