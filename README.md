@@ -4,11 +4,12 @@ This repository serves as a comprehensive template for agentic engineering proje
 
 ## Overview
 
-This template is designed to facilitate collaboration between humans and AI agents in software development by providing clear context and structured workflows. The template guides agents through three key phases:
+This template is designed to facilitate collaboration between humans and AI agents in software development by providing clear context and structured workflows. The template guides agents through four key phases:
 
 1. **Step 1**: Project Discovery & Planning - Understanding the project concept and generating foundational documents
 2. **Step 2**: SPARC Methodology Application - Implementing structured problem-solving approach  
 3. **Step 3**: Expert Context Generation - Creating specialized knowledge bases for different aspects of the project
+4. **Step 4**: PACT Framework Implementation - Multi-agent coordination and agentic software development
 
 ## How to Use
 
@@ -19,3 +20,4 @@ Work through each step sequentially, providing the contained documentation to yo
 - `step_1/` - Project discovery and initial planning documents
 - `step_2/` - SPARC methodology guide and implementation
 - `step_3/` - Expert context file generation and specialization
+- `step_4/` - PACT framework for multi-agent coordination and agentic development
