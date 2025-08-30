@@ -24,7 +24,7 @@ SPARC (Specification, Pseudocode, Architecture, Refinement, Completion) is a str
 ### Phase 1: Specification (S)
 **Your Role**: Requirements Analyst & Domain Expert
 
-**Objective**: Create a comprehensive specification document that serves as the project's foundation.
+**Objective**: Create or enhance a comprehensive specification document that serves as the project's foundation. For existing projects with phase 1 documents, build upon and formalize existing planning rather than starting from scratch.
 
 **What You Must Produce**:
 - Detailed project specification markdown file
@@ -32,9 +32,22 @@ SPARC (Specification, Pseudocode, Architecture, Refinement, Completion) is a str
 - User scenarios and acceptance criteria
 - Technical constraints and assumptions
 
+**For Existing Projects**: If BACKLOG.md, IMPLEMENTATION_GUIDE.md, RISK_ASSESSMENT.md, and FILE_OUTLINE.md exist, use them as your foundation and enhance the specification by:
+- Converting backlog items into formal functional requirements
+- Expanding implementation guide into detailed technical constraints
+- Incorporating risk assessment into assumptions and mitigation strategies
+- Using file outline to inform technical architecture constraints
+
 **Agent Template for Specification Phase**:
 ```markdown
 # [Project Name] - Specification Phase
+
+## Existing Documents Review
+*[If applicable - only include this section if phase 1 documents exist]*
+- **BACKLOG.md**: [Summary of existing backlog and how it informs this specification]
+- **IMPLEMENTATION_GUIDE.md**: [Key technical decisions already made]
+- **RISK_ASSESSMENT.md**: [Existing risks that impact specification]
+- **FILE_OUTLINE.md**: [Project structure decisions that constrain specification]
 
 ## Project Overview
 - **Project Goal**: [Clear statement of what the project aims to achieve]
@@ -43,6 +56,7 @@ SPARC (Specification, Pseudocode, Architecture, Refinement, Completion) is a str
 
 ## Functional Requirements
 [List each feature with detailed descriptions, broken into manageable components]
+*Note: For existing projects, build upon features identified in BACKLOG.md*
 
 ## Non-Functional Requirements
 - **Performance**: [Response times, throughput, scalability targets]
@@ -58,15 +72,18 @@ SPARC (Specification, Pseudocode, Architecture, Refinement, Completion) is a str
 
 ## Technical Constraints
 [Technology preferences, limitations, integration requirements]
+*Note: For existing projects, incorporate constraints from IMPLEMENTATION_GUIDE.md*
 
 ## Assumptions
 [All assumptions made during specification with justifications]
+*Note: For existing projects, include assumptions from RISK_ASSESSMENT.md*
 
 ## Success Criteria
 [Measurable criteria for project success]
 
 ## Reflection
 [Justify decisions made, consider alternatives, discuss potential challenges]
+*Note: For existing projects, reflect on how existing planning influenced this specification*
 ```
 
 ### Phase 2: Pseudocode (P)
@@ -350,17 +367,31 @@ Then: [Expected outcome]
 ## How to Use This Guide as an Agent
 
 ### Step 1: Project Analysis and User Consultation
-When given a project, first analyze what type of system is being requested, then **actively engage with the user** to gather comprehensive information:
+When given a project, first **check for existing phase 1 documents** (BACKLOG.md, IMPLEMENTATION_GUIDE.md, RISK_ASSESSMENT.md, FILE_OUTLINE.md), then analyze what type of system is being requested, and **actively engage with the user** to gather comprehensive information:
+
+**Initial Document Detection:**
+1. **Check for Existing Phase 1 Documents**: Look for BACKLOG.md, IMPLEMENTATION_GUIDE.md, RISK_ASSESSMENT.md, and FILE_OUTLINE.md in the project directory
+2. **Assess Document Quality**: If found, review the existing documents to understand what has already been established
+3. **Identify Gaps**: Determine what additional information is needed beyond existing documents
 
 **Required User Consultation Steps:**
-1. **Clarify Project Vision**: Ask the user to elaborate on unclear aspects of the project description
-2. **Gather Missing Requirements**: Identify and request information about functional and non-functional requirements
-3. **Understand Constraints**: Ask about technical limitations, timeline constraints, and resource availability
-4. **Validate Assumptions**: Present your understanding of the project and ask the user to confirm or correct it
-5. **Identify Stakeholders**: Ask who the end users are and who will be involved in the project
-6. **Define Success Criteria**: Work with the user to establish measurable success metrics
+1. **Review Existing Documentation**: If phase 1 documents exist, review them with the user to ensure they're current and complete
+2. **Clarify Project Vision**: Ask the user to elaborate on unclear aspects of the project description or existing documents
+3. **Gather Missing Requirements**: Identify and request information about functional and non-functional requirements not covered in existing documents
+4. **Understand Constraints**: Ask about technical limitations, timeline constraints, and resource availability
+5. **Validate Assumptions**: Present your understanding of the project and ask the user to confirm or correct it
+6. **Identify Stakeholders**: Ask who the end users are and who will be involved in the project
+7. **Define Success Criteria**: Work with the user to establish measurable success metrics
 
 **Key Questions to Ask Users:**
+
+*For projects with existing phase 1 documents:*
+- "I found existing planning documents (BACKLOG.md, IMPLEMENTATION_GUIDE.md, etc.). Are these current and complete?"
+- "What has changed since these documents were created?"
+- "Are there any gaps in the existing documentation that need to be addressed?"
+- "Should we proceed to Phase 2 (Pseudocode) or do you want to update the Specification first?"
+
+*For all projects:*
 - "Can you provide more details about [specific unclear aspect]?"
 - "What are the primary goals you want to achieve with this project?"
 - "Who are your target users and what problems are you solving for them?"
@@ -369,7 +400,13 @@ When given a project, first analyze what type of system is being requested, then
 - "What timeline are you working with?"
 
 ### Step 2: Phase Selection
-Determine which SPARC phase is most appropriate to start with (usually Specification, but sometimes you might be asked to focus on a specific phase).
+Determine which SPARC phase is most appropriate to start with:
+
+**For New Projects**: Start with Phase 1: Specification
+**For Existing Projects**: 
+- If phase 1 documents (BACKLOG.md, IMPLEMENTATION_GUIDE.md, RISK_ASSESSMENT.md, FILE_OUTLINE.md) exist and are complete, consider starting with Phase 2: Pseudocode
+- If phase 1 documents exist but need updates, start with Phase 1: Specification (Enhanced mode)
+- If unsure, consult with the user about which phase to begin with
 
 ### Step 3: Template Application
 Use the appropriate phase template and customize it for the specific project requirements.
@@ -386,48 +423,90 @@ Always include the reflection section with thoughtful analysis of decisions made
 ```
 I need you to act as a SPARC methodology expert and create a [PHASE] document for [PROJECT_DESCRIPTION]. 
 
-**IMPORTANT: Before proceeding with documentation, you MUST first ask the user clarifying questions to gather complete information.**
+**IMPORTANT: Before proceeding with documentation, you MUST first check for existing phase 1 documents and ask the user clarifying questions.**
 
 Follow this process:
-1. **ASK THE USER**: Review the project description and ask specific questions to clarify any unclear aspects, missing requirements, constraints, or assumptions
-2. **WAIT FOR RESPONSES**: Do not proceed until the user has provided the requested information
-3. **VALIDATE UNDERSTANDING**: Summarize your understanding and ask the user to confirm it's correct
+1. **CHECK FOR EXISTING DOCUMENTS**: Look for BACKLOG.md, IMPLEMENTATION_GUIDE.md, RISK_ASSESSMENT.md, and FILE_OUTLINE.md in the project directory
+2. **ASSESS EXISTING WORK**: If phase 1 documents exist, review them and determine if they provide sufficient foundation for proceeding to later phases
+3. **ASK THE USER**: 
+   - If existing documents found: Ask if they're current, complete, and should be used as foundation
+   - For all projects: Ask specific questions to clarify any unclear aspects, missing requirements, constraints, or assumptions
+4. **WAIT FOR RESPONSES**: Do not proceed until the user has provided the requested information
+5. **VALIDATE UNDERSTANDING**: Summarize your understanding and ask the user to confirm it's correct
 
 Then follow the SPARC [PHASE] template exactly, ensuring you:
-1. Research the domain thoroughly if needed
-2. Fill out all required sections comprehensively based on user input
-3. Include detailed explanations and justifications
-4. Consider alternatives and trade-offs
-5. Provide actionable, specific information
-6. Include a thorough reflection section
+1. **Build on Existing Work**: If phase 1 documents exist, reference and build upon them rather than duplicating content
+2. Research the domain thoroughly if needed
+3. Fill out all required sections comprehensively based on user input and existing documents
+4. Include detailed explanations and justifications
+5. Consider alternatives and trade-offs
+6. Provide actionable, specific information
+7. Include a thorough reflection section
 
 Output should be a complete markdown document ready for implementation use.
 ```
 
 ### Phase-Specific Prompts
 ```
-**Specification Phase**: "Create a comprehensive SPARC Specification document for [PROJECT]. FIRST, ask the user detailed questions about requirements, constraints, target users, success criteria, and any unclear aspects of the project. Wait for their responses before proceeding. Then include all functional/non-functional requirements, user scenarios, technical constraints, and assumptions. Ensure the specification is detailed enough that any developer could understand the project requirements."
+**Specification Phase**: "Create a comprehensive SPARC Specification document for [PROJECT]. FIRST, check for existing phase 1 documents (BACKLOG.md, IMPLEMENTATION_GUIDE.md, RISK_ASSESSMENT.md, FILE_OUTLINE.md). If found, review them and ask the user if they're current and should be used as foundation. For existing projects, focus on enhancing and formalizing existing requirements rather than starting from scratch. For all projects, ask detailed questions about requirements, constraints, target users, success criteria, and any unclear aspects. Wait for their responses before proceeding. Then include all functional/non-functional requirements, user scenarios, technical constraints, and assumptions, building upon existing documents where available. Ensure the specification is detailed enough that any developer could understand the project requirements."
 
-**Pseudocode Phase**: "Develop detailed SPARC Pseudocode documentation for [PROJECT] based on the specification. FIRST, ask the user about any algorithmic preferences, performance requirements, or implementation constraints they have. Wait for their responses. Then include high-level algorithms, data structures, function definitions, and logic flow. Focus on algorithmic thinking before implementation."
+**Pseudocode Phase**: "Develop detailed SPARC Pseudocode documentation for [PROJECT] based on the specification or existing phase 1 documents. FIRST, check for existing SPARC Specification document or phase 1 documents (BACKLOG.md, IMPLEMENTATION_GUIDE.md, etc.) and review them. Then ask the user about any algorithmic preferences, performance requirements, or implementation constraints they have. Wait for their responses. Then include high-level algorithms, data structures, function definitions, and logic flow, building upon existing project documentation. Focus on algorithmic thinking before implementation."
 
-**Architecture Phase**: "Design a complete SPARC Architecture document for [PROJECT]. FIRST, ask the user about technology preferences, infrastructure constraints, scalability requirements, and integration needs. Wait for their responses. Then include system components, technology stack decisions, database design, API specifications, and security considerations. Justify all architectural choices."
+**Architecture Phase**: "Design a complete SPARC Architecture document for [PROJECT]. FIRST, check for existing SPARC documents (Specification, Pseudocode) or phase 1 documents and review them. Then ask the user about technology preferences, infrastructure constraints, scalability requirements, and integration needs. Wait for their responses. Then include system components, technology stack decisions, database design, API specifications, and security considerations, building upon existing project documentation. Justify all architectural choices."
 
-**Refinement Phase**: "Create a SPARC Refinement plan for [PROJECT]. FIRST, ask the user about testing preferences, quality standards, performance targets, and any specific concerns they have. Wait for their responses. Then include comprehensive testing strategy, performance optimization plans, code quality standards, and refactoring recommendations. Focus on improving quality and maintainability."
+**Refinement Phase**: "Create a SPARC Refinement plan for [PROJECT]. FIRST, review existing SPARC documents (Specification, Pseudocode, Architecture) or available project documentation. Then ask the user about testing preferences, quality standards, performance targets, and any specific concerns they have. Wait for their responses. Then include comprehensive testing strategy, performance optimization plans, code quality standards, and refactoring recommendations, building upon existing project documentation. Focus on improving quality and maintainability."
 
-**Completion Phase**: "Develop a SPARC Completion document for [PROJECT]. FIRST, ask the user about deployment preferences, documentation requirements, maintenance expectations, and support processes. Wait for their responses. Then include deployment strategy, production readiness checklist, user documentation, and maintenance procedures. Ensure the project is ready for production launch."
+**Completion Phase**: "Develop a SPARC Completion document for [PROJECT]. FIRST, review all existing SPARC documents (Specification, Pseudocode, Architecture, Refinement) or available project documentation. Then ask the user about deployment preferences, documentation requirements, maintenance expectations, and support processes. Wait for their responses. Then include deployment strategy, production readiness checklist, user documentation, and maintenance procedures, building upon existing project documentation. Ensure the project is ready for production launch."
 ```
+
+## Working with Existing Projects
+
+### Detecting Existing Phase 1 Documents
+When starting SPARC methodology, always check for these phase 1 documents in the project directory:
+- **BACKLOG.md**: Contains prioritized features and requirements
+- **IMPLEMENTATION_GUIDE.md**: Contains technology stack recommendations and architecture overview
+- **RISK_ASSESSMENT.md**: Contains identified risks and mitigation strategies
+- **FILE_OUTLINE.md**: Contains proposed project structure
+
+### Integration Strategy for Existing Projects
+
+#### If All Phase 1 Documents Exist and Are Complete:
+1. **Start with Phase 2 (Pseudocode)**: Skip specification creation and begin algorithmic design
+2. **Reference Existing Documents**: Build pseudocode based on backlog features and implementation guide
+3. **Validate with User**: Confirm that existing documents are current before proceeding
+
+#### If Phase 1 Documents Exist but Are Incomplete:
+1. **Start with Phase 1 (Specification) - Enhancement Mode**: Create specification by enhancing existing documents
+2. **Build Upon Existing Work**: Use existing documents as foundation rather than starting from scratch
+3. **Fill Gaps**: Identify and address missing information in existing documents
+
+#### If No Phase 1 Documents Exist:
+1. **Start with Phase 1 (Specification) - Creation Mode**: Follow standard SPARC process
+2. **Follow Standard Process**: Use traditional specification approach
+
+### Document Mapping Strategy
+When building upon existing phase 1 documents, map them to SPARC Specification sections as follows:
+
+| Phase 1 Document | SPARC Specification Section | Integration Approach |
+|-----------------|---------------------------|-------------------|
+| BACKLOG.md | Functional Requirements | Convert user stories to formal requirements |
+| IMPLEMENTATION_GUIDE.md | Technical Constraints | Extract technology and architecture constraints |
+| RISK_ASSESSMENT.md | Assumptions | Convert risks to assumptions and constraints |
+| FILE_OUTLINE.md | Technical Constraints | Use structure to inform architecture decisions |
 
 ## Best Practices for Agents
 
-1. **Always Consult Users First**: Before creating any documentation, ask clarifying questions and gather missing information from users
-2. **Be Comprehensive**: Don't skip sections; every part of the template serves a purpose
-3. **Think Critically**: Always question assumptions and consider alternatives
-4. **Stay Practical**: Provide actionable information, not just theoretical concepts
-5. **Maintain Consistency**: Ensure each phase builds logically on the previous ones
-6. **Focus on Quality**: Better to have thorough documentation than rushed completion
-7. **Consider Stakeholders**: Write for both technical and non-technical audiences
-8. **Plan for Change**: Build flexibility into your documentation for future modifications
-9. **Validate Understanding**: Regularly confirm with users that your interpretation is correct
-10. **Ask Follow-up Questions**: Don't hesitate to ask for more details when something is unclear
+1. **Always Check for Existing Documents First**: Before starting any SPARC phase, look for existing phase 1 documents or previous SPARC documents
+2. **Always Consult Users First**: Before creating any documentation, ask clarifying questions and gather missing information from users
+3. **Build Upon Existing Work**: When phase 1 documents exist, enhance and formalize them rather than duplicating effort
+4. **Be Comprehensive**: Don't skip sections; every part of the template serves a purpose
+5. **Think Critically**: Always question assumptions and consider alternatives
+6. **Stay Practical**: Provide actionable information, not just theoretical concepts
+7. **Maintain Consistency**: Ensure each phase builds logically on the previous ones
+8. **Focus on Quality**: Better to have thorough documentation than rushed completion
+9. **Consider Stakeholders**: Write for both technical and non-technical audiences
+10. **Plan for Change**: Build flexibility into your documentation for future modifications
+11. **Validate Understanding**: Regularly confirm with users that your interpretation is correct
+12. **Ask Follow-up Questions**: Don't hesitate to ask for more details when something is unclear
 
 This guide enables any AI agent to effectively implement the SPARC methodology and create comprehensive project documentation that follows proven software development practices.
