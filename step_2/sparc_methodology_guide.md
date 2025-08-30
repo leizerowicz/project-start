@@ -349,8 +349,24 @@ Then: [Expected outcome]
 
 ## How to Use This Guide as an Agent
 
-### Step 1: Project Analysis
-When given a project, first analyze what type of system is being requested and identify the key stakeholders, requirements, and constraints.
+### Step 1: Project Analysis and User Consultation
+When given a project, first analyze what type of system is being requested, then **actively engage with the user** to gather comprehensive information:
+
+**Required User Consultation Steps:**
+1. **Clarify Project Vision**: Ask the user to elaborate on unclear aspects of the project description
+2. **Gather Missing Requirements**: Identify and request information about functional and non-functional requirements
+3. **Understand Constraints**: Ask about technical limitations, timeline constraints, and resource availability
+4. **Validate Assumptions**: Present your understanding of the project and ask the user to confirm or correct it
+5. **Identify Stakeholders**: Ask who the end users are and who will be involved in the project
+6. **Define Success Criteria**: Work with the user to establish measurable success metrics
+
+**Key Questions to Ask Users:**
+- "Can you provide more details about [specific unclear aspect]?"
+- "What are the primary goals you want to achieve with this project?"
+- "Who are your target users and what problems are you solving for them?"
+- "Are there any technical constraints or preferences I should be aware of?"
+- "What does success look like for this project?"
+- "What timeline are you working with?"
 
 ### Step 2: Phase Selection
 Determine which SPARC phase is most appropriate to start with (usually Specification, but sometimes you might be asked to focus on a specific phase).
@@ -370,9 +386,16 @@ Always include the reflection section with thoughtful analysis of decisions made
 ```
 I need you to act as a SPARC methodology expert and create a [PHASE] document for [PROJECT_DESCRIPTION]. 
 
-Follow the SPARC [PHASE] template exactly, ensuring you:
+**IMPORTANT: Before proceeding with documentation, you MUST first ask the user clarifying questions to gather complete information.**
+
+Follow this process:
+1. **ASK THE USER**: Review the project description and ask specific questions to clarify any unclear aspects, missing requirements, constraints, or assumptions
+2. **WAIT FOR RESPONSES**: Do not proceed until the user has provided the requested information
+3. **VALIDATE UNDERSTANDING**: Summarize your understanding and ask the user to confirm it's correct
+
+Then follow the SPARC [PHASE] template exactly, ensuring you:
 1. Research the domain thoroughly if needed
-2. Fill out all required sections comprehensively
+2. Fill out all required sections comprehensively based on user input
 3. Include detailed explanations and justifications
 4. Consider alternatives and trade-offs
 5. Provide actionable, specific information
@@ -383,25 +406,28 @@ Output should be a complete markdown document ready for implementation use.
 
 ### Phase-Specific Prompts
 ```
-**Specification Phase**: "Create a comprehensive SPARC Specification document for [PROJECT]. Include all functional/non-functional requirements, user scenarios, technical constraints, and assumptions. Ensure the specification is detailed enough that any developer could understand the project requirements."
+**Specification Phase**: "Create a comprehensive SPARC Specification document for [PROJECT]. FIRST, ask the user detailed questions about requirements, constraints, target users, success criteria, and any unclear aspects of the project. Wait for their responses before proceeding. Then include all functional/non-functional requirements, user scenarios, technical constraints, and assumptions. Ensure the specification is detailed enough that any developer could understand the project requirements."
 
-**Pseudocode Phase**: "Develop detailed SPARC Pseudocode documentation for [PROJECT] based on the specification. Include high-level algorithms, data structures, function definitions, and logic flow. Focus on algorithmic thinking before implementation."
+**Pseudocode Phase**: "Develop detailed SPARC Pseudocode documentation for [PROJECT] based on the specification. FIRST, ask the user about any algorithmic preferences, performance requirements, or implementation constraints they have. Wait for their responses. Then include high-level algorithms, data structures, function definitions, and logic flow. Focus on algorithmic thinking before implementation."
 
-**Architecture Phase**: "Design a complete SPARC Architecture document for [PROJECT]. Include system components, technology stack decisions, database design, API specifications, and security considerations. Justify all architectural choices."
+**Architecture Phase**: "Design a complete SPARC Architecture document for [PROJECT]. FIRST, ask the user about technology preferences, infrastructure constraints, scalability requirements, and integration needs. Wait for their responses. Then include system components, technology stack decisions, database design, API specifications, and security considerations. Justify all architectural choices."
 
-**Refinement Phase**: "Create a SPARC Refinement plan for [PROJECT]. Include comprehensive testing strategy, performance optimization plans, code quality standards, and refactoring recommendations. Focus on improving quality and maintainability."
+**Refinement Phase**: "Create a SPARC Refinement plan for [PROJECT]. FIRST, ask the user about testing preferences, quality standards, performance targets, and any specific concerns they have. Wait for their responses. Then include comprehensive testing strategy, performance optimization plans, code quality standards, and refactoring recommendations. Focus on improving quality and maintainability."
 
-**Completion Phase**: "Develop a SPARC Completion document for [PROJECT]. Include deployment strategy, production readiness checklist, user documentation, and maintenance procedures. Ensure the project is ready for production launch."
+**Completion Phase**: "Develop a SPARC Completion document for [PROJECT]. FIRST, ask the user about deployment preferences, documentation requirements, maintenance expectations, and support processes. Wait for their responses. Then include deployment strategy, production readiness checklist, user documentation, and maintenance procedures. Ensure the project is ready for production launch."
 ```
 
 ## Best Practices for Agents
 
-1. **Be Comprehensive**: Don't skip sections; every part of the template serves a purpose
-2. **Think Critically**: Always question assumptions and consider alternatives
-3. **Stay Practical**: Provide actionable information, not just theoretical concepts
-4. **Maintain Consistency**: Ensure each phase builds logically on the previous ones
-5. **Focus on Quality**: Better to have thorough documentation than rushed completion
-6. **Consider Stakeholders**: Write for both technical and non-technical audiences
-7. **Plan for Change**: Build flexibility into your documentation for future modifications
+1. **Always Consult Users First**: Before creating any documentation, ask clarifying questions and gather missing information from users
+2. **Be Comprehensive**: Don't skip sections; every part of the template serves a purpose
+3. **Think Critically**: Always question assumptions and consider alternatives
+4. **Stay Practical**: Provide actionable information, not just theoretical concepts
+5. **Maintain Consistency**: Ensure each phase builds logically on the previous ones
+6. **Focus on Quality**: Better to have thorough documentation than rushed completion
+7. **Consider Stakeholders**: Write for both technical and non-technical audiences
+8. **Plan for Change**: Build flexibility into your documentation for future modifications
+9. **Validate Understanding**: Regularly confirm with users that your interpretation is correct
+10. **Ask Follow-up Questions**: Don't hesitate to ask for more details when something is unclear
 
 This guide enables any AI agent to effectively implement the SPARC methodology and create comprehensive project documentation that follows proven software development practices.

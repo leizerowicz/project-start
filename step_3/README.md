@@ -71,6 +71,19 @@ Create focused experts for major features or components:
 - **Performance Expert** (`performance_expert.md`)
 - **Security Expert** (`security_expert.md`)
 
+#### 7. Process and Communication Experts
+Create specialized experts for project coordination and communication:
+- **Orchestrator Expert** (`orchestrator_expert.md`) - Provides guidance on which context files to use for different tasks
+- **Ask Expert** (`ask_expert.md`) - Specializes in user interaction, inquiry formulation, and requirement gathering
+- **Code Expert** (`code_expert.md`) - Focuses on implementation strategies, coding standards, and best practices
+- **Debug Expert** (`debug_expert.md`) - Specializes in troubleshooting, debugging methodologies, and issue resolution
+- **Developmental Phase Tracker Expert** (`phase_tracker_expert.md`) - Monitors project progress and milestone management
+- **Documentation Writer Expert** (`documentation_expert.md`) - Specializes in comprehensive documentation creation and maintenance
+- **Error Handling Specialist Expert** (`error_handling_expert.md`) - Focuses on error management, recovery strategies, and resilience
+- **Project Research Expert** (`research_expert.md`) - Conducts domain and technology research, market analysis, and feasibility studies
+- **Truth Validator Expert** (`truth_validator_expert.md`) - Verifies information accuracy, validates assumptions, and ensures data integrity
+- **Variable and API Matcher Expert** (`api_matcher_expert.md`) - Ensures interface consistency, data mapping, and API compatibility
+
 ## Expert File Template
 
 When creating each expert file, use this structure:
