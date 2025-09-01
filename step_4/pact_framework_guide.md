@@ -31,6 +31,7 @@ PACT (Planning, Action, Coordination, Testing) is a specialized framework that a
 
 **What You Must Produce**:
 - Agent role definitions and responsibilities
+- Swarm topology design and selection rationale
 - Task decomposition and assignment strategies
 - Communication protocols between agents
 - Decision-making hierarchies and escalation paths
@@ -48,6 +49,10 @@ PACT (Planning, Action, Coordination, Testing) is a specialized framework that a
 
 ### Agent Interaction Matrix
 [Define how agents communicate, share data, and coordinate decisions]
+
+## Swarm Topology Design
+### Topology Selection
+[Choose fundamental coordination pattern: Star (command & control), Mesh (resilient peer-to-peer), or Hive-mind (collective intelligence). Consider hybrid patterns for complex projects.]
 
 ## Task Decomposition Strategy
 ### High-Level Tasks

@@ -43,6 +43,162 @@ Define each agent that will participate in this project:
 - **Broadcast**: One-to-many communication
 - **None**: No direct communication needed
 
+## Swarm Topology Design
+
+### Topology Selection
+Choose the fundamental coordination pattern that defines how agents interact and collaborate:
+
+#### ⭐️ Star Topology
+- **Structure**: Single central agent (hub) coordinates all others (spokes)
+- **Management**: Hub assigns tasks, aggregates results, and enforces rules
+- **Best For**:
+  - Small swarms (3-5 agents)
+  - Projects requiring strict oversight and control
+  - Clear hierarchical decision-making needs
+  - Simple coordination requirements
+- **Strengths**:
+  - Easy to control and monitor
+  - Clear accountability and verification
+  - Simplified communication patterns
+  - Predictable behavior and outcomes
+- **Weaknesses**:
+  - Central point of failure
+  - Hub becomes bottleneck under load
+  - Limited scalability
+  - Reduced agent autonomy
+- **Implementation Pattern**:
+  ```mermaid
+  graph TD
+      Hub[Coordinator Agent] --> A[Agent 1]
+      Hub --> B[Agent 2]
+      Hub --> C[Agent 3]
+      Hub --> D[Agent N]
+  ```
+
+#### 🌟 Mesh Topology
+- **Structure**: Agents communicate directly with each other in peer-to-peer fashion
+- **Management**: Coordination emerges through local exchanges and negotiation
+- **Best For**:
+  - Medium to large swarms (4-12 agents)
+  - Dynamic, adaptive tasks requiring flexibility
+  - Distributed problem-solving scenarios
+  - High resilience requirements
+- **Strengths**:
+  - High resilience - no single point of failure
+  - Adaptive and self-organizing
+  - Scales well with agent count
+  - Preserves agent autonomy
+- **Weaknesses**:
+  - Harder to monitor globally
+  - Risk of coordination drift
+  - Complex consensus mechanisms needed
+  - Potential communication overhead
+- **Implementation Pattern**:
+  ```mermaid
+  graph LR
+      A[Agent 1] <--> B[Agent 2]
+      A <--> C[Agent 3]
+      A <--> D[Agent 4]
+      B <--> C
+      B <--> D
+      C <--> D
+  ```
+
+#### 🧠 Hive-Mind Topology
+- **Structure**: Agents operate as parts of a collective organism with shared state
+- **Management**: Shared memory and global state ensure synchronized behavior
+- **Best For**:
+  - Complex reasoning and analysis tasks
+  - Large swarms (8+ agents) requiring coordination
+  - Continuous learning and adaptation scenarios
+  - High-level collaborative intelligence needs
+- **Strengths**:
+  - Emergent collective intelligence
+  - High-level coordination capabilities
+  - Shared learning and knowledge evolution
+  - Sophisticated collaborative problem-solving
+- **Weaknesses**:
+  - High communication and coordination costs
+  - Risk of runaway effects without proper guardrails
+  - Complex state management requirements
+  - Potential for groupthink behaviors
+- **Implementation Pattern**:
+  ```mermaid
+  graph TB
+      SS[Shared State/Memory]
+      SS <--> A[Agent 1]
+      SS <--> B[Agent 2]
+      SS <--> C[Agent 3]
+      SS <--> D[Agent N]
+      A <--> B
+      B <--> C
+      C <--> A
+  ```
+
+### Hybrid Topology Strategies
+Most effective systems layer these patterns based on system demands:
+
+#### Hierarchical Hybrid (Star + Mesh)
+- **Structure**: Star topology at high level with mesh clusters
+- **Use Case**: Large projects with specialized sub-teams
+- **Pattern**: Department/team leads in star, team members in mesh
+```mermaid
+graph TB
+    Coordinator[Central Coordinator]
+    Coordinator --> TeamA[Team A Lead]
+    Coordinator --> TeamB[Team B Lead]
+
+    subgraph "Team A Mesh"
+    TeamA <--> A1[Agent A1]
+    TeamA <--> A2[Agent A2]
+    A1 <--> A2
+    end
+
+    subgraph "Team B Mesh"
+    TeamB <--> B1[Agent B1]
+    TeamB <--> B2[Agent B2]
+    B1 <--> B2
+    end
+```
+
+#### Dynamic Topology
+- **Structure**: Topology changes based on current phase or task requirements
+- **Use Case**: Projects with varying coordination needs over time
+- **Pattern**: Star for planning, Mesh for execution, Hive-mind for learning
+
+### Topology Selection Criteria
+
+#### Project Characteristics
+- **Team Size**:
+  - 1-3 agents: Star or simple Mesh
+  - 4-7 agents: Mesh or Hierarchical Hybrid
+  - 8+ agents: Hive-mind or Complex Hybrid
+- **Complexity Level**:
+  - Low: Star topology
+  - Medium: Mesh topology
+  - High: Hive-mind or Hybrid
+- **Coordination Requirements**:
+  - Strict control: Star
+  - Adaptive coordination: Mesh
+  - Collective intelligence: Hive-mind
+
+#### Performance Requirements
+- **Fault Tolerance**: Mesh or Hive-mind over Star
+- **Scalability**: Mesh or Hive-mind over Star
+- **Response Time**: Star for speed, Mesh for reliability
+- **Resource Efficiency**: Star for minimal overhead
+
+### Selected Topology
+**Chosen Pattern**: [STAR/MESH/HIVE_MIND/HYBRID]
+
+**Rationale**: [Explain why this topology was selected based on project characteristics, team size, complexity, and requirements]
+
+**Implementation Strategy**:
+- [Specific details on how the chosen topology will be implemented]
+- [Communication patterns and protocols]
+- [Coordination mechanisms and decision-making processes]
+- [Monitoring and adaptation procedures]
+
 ## Task Decomposition Strategy
 
 ### High-Level Task Categories
