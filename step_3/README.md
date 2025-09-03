@@ -377,16 +377,137 @@ Create copilot instructions files for:
 
 ### Copilot Instructions File Template
 
-Create a `.copilot-instructions.md` file in your project root using this workflow-focused template:
+Create a `.copilot-instructions.md` file in your project root using this comprehensive workflow-focused template:
 
 ````markdown
 # Copilot Instructions for [Project Name]
+Last Updated: [Date] - Enhanced Workflow with Complete Context Integration and SPARC Document Management
 
-## Project Context
-[Brief description of what this project does and its main purpose]
+## Project Overview
+[Project Name] is a [brief description of project type and purpose]. This document establishes the comprehensive workflow for using the agent configuration system with SPARC methodology to complete project tasks.
 
-**Tech Stack**: [Primary languages and frameworks]
-**Project Type**: [Web app, library, API, mobile app, etc.]
+Current Project Status: [Project Phase] - [Current Sprint/Milestone], [Key Status Indicators]
+
+## Primary Workflow: Orchestrator → Context → Task Analysis → SPARC Document Management → Implementation
+
+### Step 1: Start with Orchestrator
+ALWAYS begin task planning by consulting agent-config/orchestrator.md (or equivalent project coordination file). The orchestrator automatically integrates with agent-hooks and provides:
+
+- Current project phase and priorities ([Current Project Phase])
+- Task routing matrix for selecting appropriate specialist agents
+- Quality gates and coordination protocols with automated hook integration
+- [Project readiness status] and sprint objectives
+- Enhanced lifecycle management through built-in agent-hooks system
+
+### Step 2: Load Complete Context Foundation
+Based on the task and orchestrator guidance, reference ALL relevant context sources:
+
+#### A. Agent Configuration Files (agent-config/ or equivalent)
+Required Reading: Always consult relevant specialist agents:
+
+- orchestrator.md: Project coordination and current status
+- agent-hooks.md: Automated lifecycle management and quality assurance
+- Task-specific specialists (e.g., code.md, debug.md, [domain]_specialist.md)
+- project_commands_config.md and project_rules_config.md: Development standards
+
+#### B. Project Foundation Documents (Step 1 Documents) - MANDATORY INTEGRATION
+All documents must be consulted for complete context:
+
+- BACKLOG.md: Complete feature backlog with current priorities and user requests
+- IMPLEMENTATION_GUIDE.md: Technical architecture, technology stack, and development strategy
+- RISK_ASSESSMENT.md: Risk analysis, mitigation strategies, and technical constraints
+- FILE_OUTLINE.md: Current and planned project structure, [component] organization
+- README.md: Project overview and setup instructions
+
+#### C. SPARC Implementation Framework (Step 2 Documents)
+Complete methodology guidance:
+
+- sparc_methodology_guide.md: Complete SPARC implementation instructions and agent guidance
+- SPARC_PHASE_1_SPECIFICATION.md through SPARC_PHASE_5_COMPLETION.md: Detailed phase templates
+
+### Step 3: Analyze Current Task and Project State
+Before proceeding with implementation:
+
+1. **Identify Current Task**: Determine the active task from the backlog (Epic → Story → Task breakdown)
+2. **Check Project State**: Verify current technical status (tests passing, build status, dependencies)
+3. **Assess Task Requirements**: Review acceptance criteria, success metrics, and dependencies
+4. **Validate Context Alignment**: Ensure understanding matches current project reality
+
+### Step 4: SPARC Document Management (CRITICAL)
+MANDATORY: For every task, check and manage SPARC phase documents at project root:
+
+#### A. Check Existing SPARC Documents
+Look for existing SPARC documents in the format: SPARC_[EPIC]_[STORY]_[PHASE].md
+
+Example: SPARC_STORY_2_0_SPECIFICATION.md for Epic 2, Story 2.0, Specification phase
+Check all 5 phases: SPECIFICATION, PSEUDOCODE, ARCHITECTURE, REFINEMENT, COMPLETION
+
+#### B. Validate Document Alignment with Current State
+For existing SPARC documents:
+
+- **Verify Currency**: Ensure documents match current project state and requirements
+- **Check Technical Accuracy**: Validate against current codebase, test results, and architecture
+- **Assess Completeness**: Ensure all required sections are complete and accurate
+- **Review Dependencies**: Confirm document assumptions match current project status
+
+#### C. Create or Update SPARC Documents as Needed
+When SPARC documents are missing, outdated, or incomplete:
+
+- **Create Missing Documents**: Generate complete SPARC phase documents following templates
+- **Update Outdated Content**: Revise existing documents to match current project state
+- **Enhance Incomplete Sections**: Fill in missing information using current context
+- **Maintain Document Quality**: Ensure comprehensive coverage following SPARC methodology
+
+#### D. SPARC Document Integration with Step 1 Foundation
+CRITICAL: All SPARC documents MUST integrate information from Step 1 documents:
+
+In Specification Phase:
+```markdown
+## Existing Documents Review
+- **BACKLOG.md**: [Specific requirements and user stories from backlog]
+- **IMPLEMENTATION_GUIDE.md**: [Relevant technical architecture and constraints]
+- **RISK_ASSESSMENT.md**: [Associated risks and mitigation strategies]
+- **FILE_OUTLINE.md**: [Project structure impacts and requirements]
+```
+
+Throughout All Phases: Reference Step 1 documents for:
+- Technical constraints from IMPLEMENTATION_GUIDE.md
+- Risk considerations from RISK_ASSESSMENT.md
+- Project structure requirements from FILE_OUTLINE.md
+- User requirements and acceptance criteria from BACKLOG.md
+
+### Step 5: Apply SPARC Methodology with Document Validation
+Follow the 5-phase SPARC methodology ensuring document quality:
+
+- **S - Specification**: Define requirements using Step 1 context, create/update SPECIFICATION document
+- **P - Pseudocode**: Design algorithms and logic, create/update PSEUDOCODE document
+- **A - Architecture**: Plan component structure, create/update ARCHITECTURE document
+- **R - Refinement**: Optimize implementation approach, create/update REFINEMENT document
+- **C - Completion**: Final implementation plan, create/update COMPLETION document
+
+### Step 6: Implementation with Documentation Maintenance
+During implementation:
+
+- **Follow SPARC Documents**: Use the created/validated SPARC documents as implementation guide
+- **Update Documents**: Keep SPARC documents current as implementation progresses
+- **Validate Against Step 1**: Ensure implementation aligns with Step 1 foundation documents
+- **Maintain Quality**: Apply agent-hooks quality assurance throughout process
+
+## Example SPARC Document Management Workflow
+Current Task Example: Epic 2, Story 2.0 ([Example Task Description])
+1. **Check Existing Documents**: Look for SPARC_STORY_2_0_*.md files at project root
+2. **Validate Current State**: Verify documents match current test failures and project status
+3. **Update/Create as Needed**: Ensure all 5 SPARC phases exist and are accurate
+4. **Integrate Step 1 Context**: Each document references relevant Step 1 information
+5. **Maintain Throughout Implementation**: Keep documents updated as work progresses
+
+## Document Naming Convention
+**Format**: SPARC_[EPIC_ID]_[STORY_ID]_[PHASE].md
+**Phases**: SPECIFICATION, PSEUDOCODE, ARCHITECTURE, REFINEMENT, COMPLETION
+**Examples**:
+- SPARC_STORY_2_0_SPECIFICATION.md
+- SPARC_STORY_2_1_ARCHITECTURE.md
+- SPARC_EPIC_3_COMPLETION.md
 
 ## Development Workflow
 
@@ -453,11 +574,108 @@ src/
 - **Test Data**: [How to handle test data]
 - **Coverage**: [Coverage expectations]
 
+## Quality Assurance and Validation Protocol
+
+### Document Quality Requirements
+- **Completeness**: All sections from SPARC templates must be addressed
+- **Currency**: Documents must reflect current project state and requirements
+- **Integration**: Must reference and integrate Step 1 foundation documents
+- **Technical Accuracy**: Must align with current codebase and test results
+- **Actionability**: Must provide clear guidance for implementation teams
+
+### Validation Checklist for SPARC Documents
+- [ ] Document exists for current task at appropriate phase
+- [ ] "Existing Documents Review" section references all relevant Step 1 documents
+- [ ] Technical constraints from IMPLEMENTATION_GUIDE.md are incorporated
+- [ ] Risks from RISK_ASSESSMENT.md are addressed
+- [ ] Project structure from FILE_OUTLINE.md is considered
+- [ ] User requirements from BACKLOG.md are accurately reflected
+- [ ] Current test status and project state are accurately represented
+- [ ] Implementation approach aligns with [current project phase] goals
+
+## Agent-Hooks Integration and Final Validation
+
+### MANDATORY FINAL STEP: After completing all implementation work, apply agent-hooks lifecycle management:
+
+#### A. Execute Agent-Hooks Quality Assurance
+Using agent-config/agent-hooks.md (or equivalent), apply comprehensive quality assurance:
+
+- **Code Quality Validation**: Run automated quality checks and validation protocols
+- **Documentation Standards**: Ensure all documentation meets project standards
+- **Testing Requirements**: Validate test coverage and success criteria
+- **Integration Verification**: Confirm all components work together properly
+- **Performance Benchmarks**: Verify performance meets established criteria
+
+#### B. Orchestrator-Coordinated Hook Execution
+Use agent-config/orchestrator.md to coordinate final validation across specialist agents:
+
+- **Route to Quality Specialists**: Engage appropriate specialist agents for final review
+- **Cross-Agent Validation**: Ensure consistent quality across all work products
+- **Project Phase Alignment**: Confirm work aligns with current [Project Phase]
+- **Dependency Resolution**: Validate all dependencies are properly addressed
+- **Integration Protocol**: Execute proper integration with existing codebase
+
+#### C. Required Hook Validations
+Execute all applicable agent-hooks validations:
+
+- **Pre-commit Hooks**: Code formatting, linting, basic tests
+- **Integration Hooks**: Component integration and compatibility checks
+- **Quality Gate Hooks**: Comprehensive testing and performance validation
+- **Documentation Hooks**: Documentation completeness and accuracy
+- **Security Hooks**: Security vulnerability scanning and compliance
+- **Performance Hooks**: Benchmark validation and optimization verification
+
+#### D. Final Orchestrator Review
+Use orchestrator to coordinate final sign-off:
+
+- **Multi-Agent Review**: Engage relevant specialist agents for comprehensive review
+- **Quality Gate Approval**: Ensure all quality gates are met
+- **Project Status Update**: Update project status and phase tracking
+- **Next Steps Planning**: Coordinate transition to next project phase or tasks
+- **Completion Documentation**: Generate comprehensive completion report
+
+## Completion Documentation Protocol
+All completed work must document:
+
+- **What Was Done**: Implementation details and changes made
+- **Why It Was Done**: Business justification and requirements fulfilled from Step 1 context
+- **How It Was Done**: Technical approach and decisions guided by SPARC documents
+- **SPARC Phase Completion**: Which phases completed and artifacts created/updated
+- **Step 1 Integration**: How Step 1 foundation documents informed the work
+- **Agent Collaboration**: Which configurations used and coordination protocols followed
+- **Testing & Validation**: Test results and quality assurance performed
+- **SPARC Document Updates**: What SPARC documents were created, updated, or validated
+- **Agent-Hooks Execution**: Which hooks were executed and validation results
+- **Orchestrator Coordination**: How orchestrator coordinated final quality assurance
+- **Quality Gate Status**: All quality gates passed and validation completed
+- **Future Implications**: Dependencies resolved and next steps enabled
+- **Context Alignment**: Confirmation that work aligns with current project phase and priorities
+
 ## Troubleshooting
 - **[Common Issue 1]**: [Quick solution]
 - **[Common Issue 2]**: [Quick solution]
 - **Debug Mode**: `[debug command]`
 - **Logs**: [Where to find logs]
+
+### Troubleshooting Common Issues
+
+#### When SPARC Documents Don't Match Project State
+1. **Assess the Gap**: Identify what has changed since document creation
+2. **Update Documents**: Revise SPARC documents to match current reality
+3. **Re-validate Requirements**: Check if original requirements are still valid
+4. **Coordinate with Team**: Ensure updates align with broader project goals
+
+#### When Step 1 Documents Conflict with Current State
+1. **Identify the Conflict**: Determine what has changed in project status
+2. **Update Step 1 Documents**: May require updating BACKLOG.md or IMPLEMENTATION_GUIDE.md
+3. **Cascade Updates**: Update any dependent SPARC documents
+4. **Communicate Changes**: Document why changes were necessary
+
+#### When Context Is Incomplete or Outdated
+1. **Research Current State**: Use tools to check current codebase, tests, and build status
+2. **Update Documentation**: Bring all relevant documents current
+3. **Fill Information Gaps**: Use available tools and project analysis to complete context
+4. **Validate with Team**: Confirm understanding matches project reality
 
 ## AI Assistant Preferences
 - **Style**: [Preferred coding style]
@@ -472,30 +690,46 @@ src/
 
 ### Integration with Agentic Workflows
 
-For projects using the agentic software development framework (Steps 1-4), enhance your copilot instructions with:
+The comprehensive copilot instructions template above fully integrates the agentic software development framework (Steps 1-4). The template includes:
 
-#### Agentic Framework Integration Section
-```markdown
-## Agentic Framework Integration
+#### Built-in Agentic Framework Integration
+The enhanced template automatically incorporates:
 
-### Workflow Context
-This project follows the 4-step agentic software development process:
-- **Step 1**: Project Discovery & Planning (BACKLOG.md, IMPLEMENTATION_GUIDE.md, etc.)
-- **Step 2**: SPARC Methodology (Specification, Pseudocode, Architecture, Refinement, Completion)
-- **Step 3**: Expert Context Files (Domain-specific knowledge systems)
-- **Step 4**: PACT Framework (Planning, Action, Coordination, Testing)
+- **Step 1 Integration**: Mandatory consultation of BACKLOG.md, IMPLEMENTATION_GUIDE.md, RISK_ASSESSMENT.md, and FILE_OUTLINE.md
+- **Step 2 Integration**: Complete SPARC methodology with document management and validation
+- **Step 3 Integration**: Agent configuration and expert context consultation
+- **Step 4 Integration**: Agent-hooks lifecycle management and orchestrator coordination
 
-### Agent Coordination Guidelines
-- **Cross-Step Integration**: [How this project integrates across workflow steps]
-- **Expert Domain Focus**: [Which expert domains are most relevant]
-- **Coordination Points**: [Key points where agents need to collaborate]
+#### Key Agentic Framework Features
 
-### Multi-Agent Development Rules
-1. **Context Sharing**: Always reference relevant Step 1-4 documents
-2. **Expert Consultation**: Use appropriate expert context files for domain guidance
-3. **Validation Gates**: Apply PACT coordination principles for quality assurance
-4. **Learning Integration**: Incorporate feedback across all workflow steps
-```
+**1. Orchestrator-Driven Workflow**: Every task begins with orchestrator consultation for proper agent coordination
+
+**2. Complete Context Loading**: Systematic integration of all Step 1 foundation documents with SPARC document management
+
+**3. SPARC Document Management**: Comprehensive system for creating, updating, and validating SPARC phase documents
+
+**4. Agent-Hooks Integration**: Mandatory final validation using automated lifecycle management and quality assurance
+
+**5. Multi-Agent Coordination**: Built-in protocols for cross-agent communication and validation
+
+#### Customization for Different Agentic Project Types
+When using this template, customize the following sections based on your agentic implementation:
+
+**Agent Configuration Section**: Specify your agent-config directory structure and specialist agents
+
+**Orchestrator Integration**: Define your specific orchestrator.md location and coordination protocols  
+
+**SPARC Document Location**: Confirm where SPARC phase documents are stored in your project
+
+**Agent-Hooks Implementation**: Specify your agent-hooks.md location and validation requirements
+
+#### For Non-Agentic Projects
+If your project doesn't use the full agentic framework, you can simplify the template by:
+
+- Removing the orchestrator workflow steps
+- Simplifying the SPARC document management to basic documentation
+- Using standard quality gates instead of agent-hooks validation
+- Focusing on the core development workflow and standards sections
 
 ### Customizing the Template for Different Project Types
 
