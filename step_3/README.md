@@ -377,7 +377,9 @@ Create copilot instructions files for:
 
 ### Copilot Instructions File Template
 
-Create a `.copilot-instructions.md` file in your project root using this comprehensive workflow-focused template:
+**Note: When using the Project-Start Enhanced CLI, copilot instructions are automatically generated and stored in `.github/copilot-instructions.md` for optimal GitHub integration and autonomous AI operation.**
+
+Create a `.copilot-instructions.md` file in your project root (or use `.github/copilot-instructions.md` for GitHub integration) using this comprehensive workflow-focused template:
 
 ````markdown
 # Copilot Instructions for [Project Name]

@@ -92,7 +92,7 @@ Creates persistent context systems that eliminate repetitive copilot instruction
 **Output Structure**:
 ```
 agent_config/
-├── copilot_instructions.md (constitutional, persistent context)
+├── .github/copilot-instructions.md (constitutional, autonomous agent context)
 ├── project_memory.md (current state and decisions)
 ├── expert_domains/
 │   ├── architecture_expert.md (constitutional system design)

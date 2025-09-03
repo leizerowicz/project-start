@@ -56,7 +56,7 @@ Each step generates comprehensive, constitutional-compliant documents:
 - `sparc/context.md` - Project context for agents
 
 **Step 3 Outputs (Persistent context):**
-- `copilot_instructions.md` - Comprehensive agent context file
+- `.github/copilot-instructions.md` - Comprehensive autonomous agent context file
 - `agent_coordination.md` - Multi-agent coordination protocols
 
 **Step 4 Outputs (PACT framework):**
@@ -127,7 +127,7 @@ specs/001-your-project/
 │   ├── plan.md                  # Implementation plan
 │   ├── research.md              # Technology research
 │   └── context.md               # Project context
-├── copilot_instructions.md      # Step 3: Persistent agent context
+├── .github/copilot-instructions.md # Step 3: Autonomous agent context
 ├── agent_coordination.md        # Step 3: Multi-agent protocols
 ├── pact_testing.md             # Step 4: Testing strategy
 └── deployment_strategy.md       # Step 4: Deployment plan
