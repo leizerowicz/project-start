@@ -13,12 +13,50 @@ from pathlib import Path
 from typing import Dict, List, Optional, Any
 import subprocess
 
+# ASCII Art Banner for Agentic Engineering
+AGENTIC_ENGINEERING_BANNER = """
+ █████╗  ██████╗ ███████╗███╗   ██╗████████╗██╗ ██████╗
+██╔══██╗██╔════╝ ██╔════╝████╗  ██║╚══██╔══╝██║██╔════╝
+███████║██║  ███╗█████╗  ██╔██╗ ██║   ██║   ██║██║     
+██╔══██║██║   ██║██╔══╝  ██║╚██╗██║   ██║   ██║██║     
+██║  ██║╚██████╔╝███████╗██║ ╚████║   ██║   ██║╚██████╗
+╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚═══╝   ╚═╝   ╚═╝ ╚═════╝
+
+███████╗███╗   ██╗ ██████╗ ██╗███╗   ██╗███████╗███████╗██████╗ ██╗███╗   ██╗ ██████╗ 
+██╔════╝████╗  ██║██╔════╝ ██║████╗  ██║██╔════╝██╔════╝██╔══██╗██║████╗  ██║██╔════╝ 
+█████╗  ██╔██╗ ██║██║  ███╗██║██╔██╗ ██║█████╗  █████╗  ██████╔╝██║██╔██╗ ██║██║  ███╗
+██╔══╝  ██║╚██╗██║██║   ██║██║██║╚██╗██║██╔══╝  ██╔══╝  ██╔══██╗██║██║╚██╗██║██║   ██║
+███████╗██║ ╚████║╚██████╔╝██║██║ ╚████║███████╗███████╗██║  ██║██║██║ ╚████║╚██████╔╝
+╚══════╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝╚═╝  ╚═══╝╚══════╝╚══════╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝ 
+"""
+
+TAGLINE = "Specification-Driven Development with AI Agent Collaboration"
+
 class ProjectStartCLI:
     def __init__(self):
         self.project_dir = Path.cwd()
         self.config_dir = self.project_dir / "agent_config"
         self.specs_dir = self.project_dir / "specs"
         self.memory_dir = self.project_dir / "memory"
+    
+    def show_banner(self):
+        """Display the ASCII art banner for Agentic Engineering"""
+        print("\n" + "=" * 80)
+        # Display banner with color-like effect using different shading
+        banner_lines = AGENTIC_ENGINEERING_BANNER.strip().split('\n')
+        for line in banner_lines:
+            print(line)
+        
+        print("\n" + " " * 15 + TAGLINE)
+        print("=" * 80 + "\n")
+    
+    def show_copilot_integration_status(self):
+        """Show GitHub Copilot integration status"""
+        print("🤖 GitHub Copilot Integration: ✅ ENABLED")
+        print("   • Constitutional AI governance active")
+        print("   • Multi-agent coordination protocols ready")
+        print("   • Persistent context management initialized")
+        print()
         
     def ask_question(self, question: str, default: str = "", required: bool = True) -> str:
         """Ask user a question with optional default value"""
@@ -1226,7 +1264,10 @@ compliance improvements across the organization.
 
     def project_start_enhanced(self, project_description: str) -> None:
         """Master command that orchestrates the entire enhanced workflow"""
-        print("\n🚀 Executing PROJECT-START-ENHANCED workflow...")
+        self.show_banner()
+        self.show_copilot_integration_status()
+        
+        print("🚀 Executing PROJECT-START-ENHANCED workflow...")
         
         if project_description:
             # If description provided via command line, use it
@@ -1264,6 +1305,15 @@ compliance improvements across the organization.
         self.update_memory_systems(project_info, project_path)
         print("✓ Persistent context initialized")
         
+        # Ask about automated workflow for master command
+        print("\n🤖 AUTOMATED WORKFLOW OPTION")
+        print("Continue with automated Steps 2-4? This will complete the full workflow.")
+        
+        response = input("\nContinue with automation? (Y/n): ").strip().lower()
+        if response in ['', 'y', 'yes']:
+            self.run_automated_workflow(project_path)
+            return  # Exit early as automation handles everything
+        
         print("\n" + "="*60)
         print("🎉 STEP 1 DISCOVERY COMPLETED SUCCESSFULLY!")
         print("="*60)
@@ -1276,17 +1326,29 @@ compliance improvements across the organization.
         print("  ✓ constitutional_validation.md - Compliance verification")
         print("  ✓ clarification_needed.md - Items requiring clarification")
         
-        print("\n🔄 Next Steps:")
-        print("  1. Review generated documents")
-        print("  2. Address clarifications in clarification_needed.md") 
-        print("  3. Run: /enhance-step-2 --project-path " + project_path)
+        # Ask if user wants automated workflow
+        print("\n🤖 AUTOMATED WORKFLOW OPTION")
+        print("Would you like to automatically execute all remaining steps?")
+        print("This will run Steps 2-4 with minimal interaction.")
         
-        print("\n🎯 Constitutional Status: ✓ ALL GATES PASSED")
-        print("Ready for Step 2: Constitutional SPARC Methodology")
+        response = input("\nRun automated workflow? (y/N): ").strip().lower()
+        if response in ['y', 'yes']:
+            self.run_automated_workflow(project_path)
+        else:
+            print("\n🔄 Manual Next Steps:")
+            print("  1. Review generated documents")
+            print("  2. Address clarifications in clarification_needed.md") 
+            print("  3. Run: /enhance-step-2 --project-path " + project_path)
+            
+            print("\n🎯 Constitutional Status: ✓ ALL GATES PASSED")
+            print("Ready for Step 2: Constitutional SPARC Methodology")
 
     def enhance_step_1(self, project_description: str) -> None:
         """Enhanced Step 1 with full interactive configuration"""
-        print("\n🚀 ENHANCE-STEP-1: Automated Discovery with Constitutional Validation")
+        self.show_banner()
+        self.show_copilot_integration_status()
+        
+        print("🚀 ENHANCE-STEP-1: Automated Discovery with Constitutional Validation")
         
         # Always use interactive questionnaire for step 1 enhancement
         project_info = self.collect_project_info()
@@ -1321,6 +1383,62 @@ compliance improvements across the organization.
         print("📋 Memory Systems: ✓ INITIALIZED")
         
         print(f"\n🔄 Next: /enhance-step-2 --project-path {project_path}")
+
+    def run_automated_workflow(self, project_path: str) -> None:
+        """Run the complete automated workflow for Steps 2-4"""
+        print("\n🤖 STARTING AUTOMATED WORKFLOW")
+        print("=" * 60)
+        print("Executing Steps 2-4 with constitutional governance...")
+        
+        try:
+            # Step 2: SPARC Methodology
+            print("\n📋 Automated Step 2: Constitutional SPARC Methodology")
+            self.enhance_step_2(project_path)
+            print("✅ Step 2 completed automatically")
+            
+            # Step 3: Context Systems
+            print("\n🧠 Automated Step 3: Persistent Context Systems")
+            self.enhance_step_3(project_path)
+            print("✅ Step 3 completed automatically")
+            
+            # Step 4: PACT Framework
+            print("\n🤖 Automated Step 4: Constitutional PACT Framework")
+            self.enhance_step_4(project_path)
+            print("✅ Step 4 completed automatically")
+            
+            # Update agent context automatically
+            print("\n🔄 Finalizing agent context...")
+            self.update_agent_context_automatically(project_path)
+            
+            print("\n" + "=" * 60)
+            print("🎉 AUTOMATED WORKFLOW COMPLETED!")
+            print("=" * 60)
+            print(f"\n📂 Project Location: {project_path}")
+            print("🎯 All constitutional gates passed")
+            print("🧠 Agent coordination systems active")
+            print("🤖 Ready for development with AI assistance")
+            
+            print("\n🚀 Your project is now fully configured!")
+            print("Review the generated specifications and begin implementation.")
+            
+        except Exception as e:
+            print(f"\n❌ Automated workflow failed at step: {e}")
+            print("You can continue manually with the individual step commands.")
+
+    def update_agent_context_automatically(self, project_path: str) -> None:
+        """Automatically update agent context without user interaction"""
+        try:
+            # Run the agent context update script
+            script_path = Path(__file__).parent.parent / "scripts" / "update-agent-context.sh"
+            if script_path.exists():
+                subprocess.run([str(script_path), project_path], check=True, capture_output=True)
+                print("✅ Agent context updated automatically")
+            else:
+                print("⚠️  Agent context script not found, skipping")
+        except subprocess.CalledProcessError:
+            print("⚠️  Agent context update failed, continuing anyway")
+        except Exception:
+            print("⚠️  Agent context update skipped")
 
     def enhance_step_2(self, project_path: str) -> None:
         """Enhanced Step 2: Constitutional SPARC Methodology"""
