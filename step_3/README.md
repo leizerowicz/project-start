@@ -377,215 +377,97 @@ Create copilot instructions files for:
 
 ### Copilot Instructions File Template
 
-Create a `.copilot-instructions.md` file in your project root using this comprehensive template:
+Create a `.copilot-instructions.md` file in your project root using this workflow-focused template:
 
 ````markdown
 # Copilot Instructions for [Project Name]
 
-## Project Overview
-[Brief description of what this project does and its primary goals]
+## Project Context
+[Brief description of what this project does and its main purpose]
 
-**Project Type**: [Web App/Mobile App/Library/API/etc.]
-**Tech Stack**: [Primary technologies, frameworks, and languages]
-**Architecture Pattern**: [MVC/Microservices/Monolith/etc.]
+**Tech Stack**: [Primary languages and frameworks]
+**Project Type**: [Web app, library, API, mobile app, etc.]
 
-## Repository Intent & Goals
-- [Primary goal 1 - what the project achieves]
-- [Primary goal 2 - who it serves or what problem it solves]
-- [Primary goal 3 - key technical or business objectives]
+## Development Workflow
 
-## Repository Structure
-```
-project-root/
-├── src/                 # [Description of src directory]
-├── tests/               # [Description of test structure]
-├── docs/                # [Documentation location]
-├── config/              # [Configuration files]
-└── [other-directories]  # [Other important directories]
-```
-
-## Development Standards & Guidelines
-
-### Code Standards & Contribution Guidelines
-
-#### Required Before Each Commit
-- [ ] Run linting: `[your-lint-command]`
-- [ ] Run tests: `[your-test-command]`
-- [ ] Run formatter: `[your-format-command]`
-- [ ] Build verification: `[your-build-command]`
-
-#### Development Flow Commands
+### Setup & Getting Started
 ```bash
+# Clone and setup
+git clone [repo-url]
+cd [project-name]
+
 # Install dependencies
-[package-manager] install
+[package-manager install command]
 
-# Development server
-[package-manager] run dev
-
-# Build production
-[package-manager] run build
-
-# Run tests
-[package-manager] run test
-
-# Format code
-[package-manager] run format
-
-# Lint code
-[package-manager] run lint
+# Start development
+[development server command]
 ```
 
-### Best Practices
-1. **[Practice 1]**: [Specific guideline with rationale]
-2. **[Practice 2]**: [Another important practice]
-3. **[Practice 3]**: [Architecture or pattern guidance]
-4. **[Practice 4]**: [Testing or quality guideline]
-5. **[Practice 5]**: [Documentation or maintenance guideline]
+### Daily Development Workflow
+1. **Before coding**: `[lint/check command]`
+2. **During development**: `[dev server command]`
+3. **Before committing**: `[test command]` && `[format command]`
+4. **Build check**: `[build command]`
 
-### Code Organization Principles
-- **[Principle 1]**: [How code should be organized]
-- **[Principle 2]**: [Naming conventions or structure rules]
-- **[Principle 3]**: [Component or module organization]
+## Code Standards
 
-## Architecture Guidelines
-
-### [Component/Module] Architecture
-[Description of how specific parts of the system are organized]
-
-#### Key Components
-- **[Component 1]**: [Purpose and responsibility]
-- **[Component 2]**: [Purpose and responsibility]
-- **[Component 3]**: [Purpose and responsibility]
-
-#### Design Patterns
-- **[Pattern 1]**: [When and how to use this pattern]
-- **[Pattern 2]**: [Another important pattern]
-
-### Data Flow
-[Description of how data moves through the system]
-
-## Technology-Specific Guidelines
-
-### [Primary Language] Best Practices
-- [Language-specific guideline 1]
-- [Language-specific guideline 2]
-- [Language-specific guideline 3]
-
-### [Framework/Library] Guidelines
-- [Framework-specific best practice 1]
-- [Framework-specific best practice 2]
-
-## Testing Requirements
-
-### Test Structure
+### File Organization
 ```
-tests/
-├── unit/           # Unit tests
-├── integration/    # Integration tests
-├── e2e/           # End-to-end tests
-└── fixtures/      # Test data and fixtures
+src/
+├── [main-source-structure]
+├── [component-structure]
+└── [other-key-directories]
 ```
 
-### Testing Best Practices
-- **Coverage**: [Coverage requirements and standards]
-- **Naming**: [Test naming conventions]
-- **Structure**: [How tests should be organized]
-- **Data**: [Test data management]
+### Coding Conventions
+- **Naming**: [Specific naming patterns]
+- **Functions**: [Function structure and size guidelines]
+- **Imports**: [Import organization rules]
+- **Comments**: [When and how to comment]
 
-## Error Handling & Logging
+### Quality Gates
+- [ ] Tests pass: `[test command]`
+- [ ] Linting clean: `[lint command]`
+- [ ] Types valid: `[type-check command]` (if applicable)
+- [ ] Build successful: `[build command]`
 
-### Error Handling Patterns
+## Architecture Patterns
+
+### Core Concepts
+- **[Key Pattern 1]**: [Brief description and when to use]
+- **[Key Pattern 2]**: [Brief description and when to use]
+- **[Key Pattern 3]**: [Brief description and when to use]
+
+### Common Tasks
 ```[language]
-// Example error handling pattern
-try {
-    // Operation
-} catch (error) {
-    // Consistent error handling
-}
+// [Common Task 1] - [Brief description]
+[code example]
+
+// [Common Task 2] - [Brief description]
+[code example]
 ```
 
-### Logging Standards
-- **Levels**: [When to use different log levels]
-- **Format**: [Consistent log message formatting]
-- **Sensitive Data**: [How to handle sensitive information]
+## Testing Approach
+- **Unit Tests**: [Location and naming convention]
+- **Integration Tests**: [When and how to write]
+- **Test Data**: [How to handle test data]
+- **Coverage**: [Coverage expectations]
 
-## API Design (if applicable)
+## Troubleshooting
+- **[Common Issue 1]**: [Quick solution]
+- **[Common Issue 2]**: [Quick solution]
+- **Debug Mode**: `[debug command]`
+- **Logs**: [Where to find logs]
 
-### REST API Patterns
-- **Naming**: [URL naming conventions]
-- **Status Codes**: [Appropriate HTTP status codes]
-- **Response Format**: [Consistent response structure]
+## AI Assistant Preferences
+- **Style**: [Preferred coding style]
+- **Explanations**: [Level of detail wanted in explanations]
+- **Suggestions**: [What kinds of suggestions are most helpful]
 
-### Database Patterns
-- **Naming**: [Database naming conventions]
-- **Migrations**: [Migration best practices]
-- **Queries**: [Query optimization guidelines]
-
-## Security Guidelines
-- **Authentication**: [Authentication patterns and requirements]
-- **Authorization**: [Permission and access control]
-- **Data Protection**: [Sensitive data handling]
-- **Input Validation**: [Validation requirements and patterns]
-
-## Performance Guidelines
-- **[Performance Area 1]**: [Specific performance considerations]
-- **[Performance Area 2]**: [Optimization strategies]
-- **Monitoring**: [Performance monitoring approaches]
-
-## Documentation Standards
-- **Code Comments**: [When and how to comment code]
-- **API Documentation**: [API documentation requirements]
-- **README Updates**: [When to update documentation]
-- **Change Documentation**: [How to document changes]
-
-## Deployment & DevOps
-- **Environment Config**: [Environment-specific configuration]
-- **Build Process**: [Build and deployment steps]
-- **Monitoring**: [Production monitoring requirements]
-
-## AI/Copilot-Specific Guidelines
-
-### Code Generation Preferences
-- **Style**: [Preferred coding style and patterns]
-- **Comments**: [Comment style and verbosity preferences]
-- **Naming**: [Variable and function naming preferences]
-
-### Suggestions to Avoid
-- **Deprecated Patterns**: [Patterns not to suggest]
-- **Security Anti-patterns**: [Security issues to avoid]
-- **Performance Anti-patterns**: [Performance issues to avoid]
-
-### Context-Specific Guidance
-- **[Domain-Specific Context]**: [Specialized knowledge for this domain]
-- **[Technical Context]**: [Technical constraints or requirements]
-
-## Common Patterns & Examples
-
-### [Pattern Name]
-```[language]
-// Example of preferred pattern
-// With explanation of when to use
-```
-
-### [Another Pattern]
-```[language]
-// Another common pattern
-// With usage guidelines
-```
-
-## Troubleshooting Common Issues
-- **[Issue 1]**: [Common problem and solution]
-- **[Issue 2]**: [Another frequent issue and fix]
-
-## Additional Resources
-- [Link to important documentation]
-- [Link to style guides or standards]
-- [Link to architectural decision records]
-
-## Maintenance Notes
-- **Last Updated**: [Date]
-- **Review Schedule**: [When to review these instructions]
-- **Contact**: [Who to contact for questions]
+## Quick Reference
+- **Documentation**: [Link to main docs]
+- **Contributing**: [Link to contribution guidelines]
+- **Issues**: [How to report issues]
 ````
 
 ### Integration with Agentic Workflows
@@ -618,31 +500,35 @@ This project follows the 4-step agentic software development process:
 ### Customizing the Template for Different Project Types
 
 #### Web Application Projects
-Focus areas: Frontend frameworks, API design, database patterns, authentication, deployment
+Focus on frontend frameworks, API integration, and user workflows:
 ```markdown
-**Tech Stack**: React/Vue/Angular + Node.js/Python/etc. + Database
-**Key Sections**: API Design, Database Patterns, Authentication, Performance, Security
+**Tech Stack**: React/Vue/Angular + Node.js/Python + Database
+**Key Workflows**: Component development, API integration, testing, deployment
+**Common Patterns**: State management, routing, authentication
 ```
 
 #### Mobile Application Projects  
-Focus areas: Platform-specific patterns, UI/UX guidelines, offline handling, app store requirements
+Focus on platform-specific development and app store workflows:
 ```markdown
 **Tech Stack**: React Native/Flutter/Native iOS/Android
-**Key Sections**: Platform Guidelines, UI Patterns, Offline Support, Performance, App Store
+**Key Workflows**: Platform setup, testing on devices, app store deployment
+**Common Patterns**: Navigation, offline support, platform-specific UI
 ```
 
 #### Library/Package Projects
-Focus areas: API design, backward compatibility, documentation, testing, publishing
+Focus on API design, testing, and distribution:
 ```markdown
 **Tech Stack**: [Language] + Testing Framework + Build Tools
-**Key Sections**: API Design, Versioning, Documentation, Testing, Publishing
+**Key Workflows**: API design, testing, versioning, publishing
+**Common Patterns**: Public API design, backward compatibility
 ```
 
 #### Microservices Projects
-Focus areas: Service communication, distributed systems, monitoring, deployment
+Focus on service coordination and deployment:
 ```markdown
-**Architecture Pattern**: Microservices with [Communication Protocol]
-**Key Sections**: Service Design, Communication Patterns, Monitoring, Deployment
+**Tech Stack**: [Language] + Container + Orchestration
+**Key Workflows**: Service development, testing, deployment, monitoring
+**Common Patterns**: Service communication, data consistency, error handling
 ```
 
 ### Example: Completed Copilot Instructions
@@ -652,50 +538,102 @@ Here's an example of a completed `.copilot-instructions.md` for a React/TypeScri
 ````markdown
 # Copilot Instructions for TaskManager Pro
 
-## Project Overview
-A modern task management web application built with React and TypeScript, featuring real-time collaboration, project management, and team coordination tools.
+## Project Context
+A modern task management web application for teams with real-time collaboration and project coordination.
 
-**Project Type**: Web Application  
-**Tech Stack**: React 18, TypeScript, Node.js, PostgreSQL, Redis, Docker  
-**Architecture Pattern**: Layered Architecture with Domain-Driven Design
+**Tech Stack**: React 18, TypeScript, Node.js, PostgreSQL
+**Project Type**: Web application
 
-## Repository Intent & Goals
-- Provide intuitive task and project management for teams
-- Enable real-time collaboration with live updates
-- Maintain high performance with complex data relationships
-- Ensure enterprise-grade security and data protection
+## Development Workflow
 
-## Development Standards & Guidelines
+### Setup & Getting Started
+```bash
+# Clone and setup
+git clone https://github.com/company/taskmanager-pro
+cd taskmanager-pro
 
-#### Required Before Each Commit
-- [ ] Run linting: `npm run lint`
-- [ ] Run tests: `npm test`
-- [ ] Run type checking: `npm run type-check`
-- [ ] Build verification: `npm run build`
+# Install dependencies
+npm install
 
-### Best Practices
-1. **Component Architecture**: Use functional components with hooks, prefer composition over inheritance
-2. **Type Safety**: All functions must have explicit TypeScript types, no `any` types allowed
-3. **Performance**: Use React.memo, useMemo, and useCallback for expensive operations
-4. **Testing**: Minimum 80% code coverage, focus on user behavior over implementation details
-5. **State Management**: Use Zustand for global state, React Query for server state
+# Start development
+npm run dev
+```
 
-### Code Organization Principles
-- **Feature-Based Structure**: Group by feature rather than by file type
-- **Barrel Exports**: Use index.ts files for clean imports
-- **Separation of Concerns**: Separate business logic from UI components
+### Daily Development Workflow
+1. **Before coding**: `npm run type-check`
+2. **During development**: `npm run dev`
+3. **Before committing**: `npm test` && `npm run lint:fix`
+4. **Build check**: `npm run build`
 
-## AI/Copilot-Specific Guidelines
+## Code Standards
 
-### Code Generation Preferences
-- **Style**: Functional components, TypeScript-first, explicit return types
-- **Comments**: JSDoc for public APIs, inline comments for complex business logic
-- **Naming**: Descriptive names, camelCase for variables, PascalCase for components
+### File Organization
+```
+src/
+├── components/     # Reusable UI components
+├── features/       # Feature-based modules
+├── hooks/          # Custom React hooks
+└── utils/          # Utility functions
+```
 
-### Suggestions to Avoid
-- **Class Components**: Always suggest functional components instead
-- **Default Exports**: Prefer named exports for better refactoring
-- **Inline Styles**: Use Tailwind CSS classes or CSS modules instead
+### Coding Conventions
+- **Naming**: camelCase for variables, PascalCase for components
+- **Functions**: Keep under 20 lines, single responsibility
+- **Imports**: Group by external, internal, relative
+- **Comments**: JSDoc for public APIs only
+
+### Quality Gates
+- [ ] Tests pass: `npm test`
+- [ ] Linting clean: `npm run lint`
+- [ ] Types valid: `npm run type-check`
+- [ ] Build successful: `npm run build`
+
+## Architecture Patterns
+
+### Core Concepts
+- **Feature Modules**: Group related functionality together
+- **Custom Hooks**: Extract stateful logic from components
+- **Component Composition**: Prefer composition over inheritance
+
+### Common Tasks
+```typescript
+// Feature component structure
+export const TaskList = () => {
+  const { tasks, loading } = useTasks();
+  
+  if (loading) return <LoadingSpinner />;
+  return <TaskGrid tasks={tasks} />;
+};
+
+// Custom hook pattern
+export const useTasks = () => {
+  const [tasks, setTasks] = useState([]);
+  // ... logic
+  return { tasks, loading, error };
+};
+```
+
+## Testing Approach
+- **Unit Tests**: `src/**/*.test.ts` - test hooks and utilities
+- **Component Tests**: `src/**/*.test.tsx` - test user interactions
+- **Test Data**: Use factories in `src/test/factories/`
+- **Coverage**: Minimum 80% for new code
+
+## Troubleshooting
+- **Type Errors**: Run `npm run type-check` for detailed errors
+- **Build Issues**: Check `npm run build` output
+- **Debug Mode**: `npm run dev:debug`
+- **Logs**: Browser DevTools Console
+
+## AI Assistant Preferences
+- **Style**: Functional components, explicit TypeScript types
+- **Explanations**: Brief comments for complex business logic
+- **Suggestions**: Prefer modern React patterns and hooks
+
+## Quick Reference
+- **Documentation**: [Link to project wiki]
+- **Contributing**: [Link to CONTRIBUTING.md]
+- **Issues**: Create GitHub issue with reproduction steps
 ````
 
 ### Best Practices for Copilot Instructions Files
