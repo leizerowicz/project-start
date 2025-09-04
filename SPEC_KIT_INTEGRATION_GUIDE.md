@@ -57,11 +57,15 @@ Each step generates comprehensive, constitutional-compliant documents:
 
 **Step 3 Outputs (Persistent context):**
 - `.github/copilot-instructions.md` - Comprehensive autonomous agent context file
-- `agent_coordination.md` - Multi-agent coordination protocols
+- Expert context files for specialized domains (architecture_expert.md, tech_stack_expert.md, etc.)
+- Agent coordination and communication protocols
+- Agentic framework experts for multi-agent coordination
+- Agent hooks system for workflow automation
 
 **Step 4 Outputs (PACT framework):**
-- `pact_testing.md` - Constitutional testing strategy
-- `deployment_strategy.md` - Deployment plan with quality gates
+- Core PACT documents: `AGENT_ECOSYSTEM_DESIGN.md`, `COORDINATION_STRATEGY.md`, `COLLABORATIVE_WORKFLOWS.md`, `AGENTIC_TESTING_FRAMEWORK.md`
+- Integration documents: `PACT_SPARC_INTEGRATION.md`, `EMERGENT_ARCHITECTURE_GUIDE.md`
+- Support documents: `AGENT_COMMUNICATION_PROTOCOLS.md`, `QUALITY_ASSURANCE_FRAMEWORK.md`
 
 ## 🔧 Quick Start Guide
 
@@ -128,9 +132,16 @@ specs/001-your-project/
 │   ├── research.md              # Technology research
 │   └── context.md               # Project context
 ├── .github/copilot-instructions.md # Step 3: Autonomous agent context
-├── agent_coordination.md        # Step 3: Multi-agent protocols
-├── pact_testing.md             # Step 4: Testing strategy
-└── deployment_strategy.md       # Step 4: Deployment plan
+├── expert_files/                   # Step 3: Domain-specific expert context files
+├── agent_hooks.md                  # Step 3: Agent workflow automation
+├── AGENT_ECOSYSTEM_DESIGN.md       # Step 4: Agent roles and capabilities
+├── COORDINATION_STRATEGY.md        # Step 4: Task coordination mechanisms
+├── COLLABORATIVE_WORKFLOWS.md      # Step 4: Multi-agent development workflows
+├── AGENTIC_TESTING_FRAMEWORK.md    # Step 4: Multi-agent testing strategies
+├── PACT_SPARC_INTEGRATION.md       # Step 4: PACT-SPARC methodology alignment
+├── EMERGENT_ARCHITECTURE_GUIDE.md  # Step 4: Architecture evolution guide
+├── AGENT_COMMUNICATION_PROTOCOLS.md # Step 4: Communication standards
+└── QUALITY_ASSURANCE_FRAMEWORK.md  # Step 4: Quality validation mechanisms
 ```
 
 ## 🧠 Constitutional Framework
