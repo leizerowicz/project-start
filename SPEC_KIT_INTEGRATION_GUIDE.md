@@ -19,6 +19,11 @@ This comprehensive guide covers the fully implemented SPEC-KIT integration with 
 - **Comprehensive questionnaire** covering technical preferences, team coordination, compliance requirements
 - **Constitutional validation** integrated from project inception
 - **Persistent memory systems** for context continuity across sessions
+- **Enhanced README reading** - CLI reads from all Step 1-4 README files for context-aware document generation
+  - Step 1: Reads `step_1/README.md` for project discovery framework and honest market validation context
+  - Step 2: Reads `step_2/sparc_methodology_guide.md` for SPARC methodology principles and implementation guidance
+  - Step 3: Reads `step_3/README.md` for agentic system integration and expert context frameworks
+  - Step 4: Reads `step_4/` templates for PACT framework implementation and testing strategies
 
 ### Complete 4-Step Workflow ✅
 ```bash

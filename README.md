@@ -21,11 +21,23 @@ cd project-start
 ## ✅ Production Ready Features
 
 - **Interactive CLI** with comprehensive questionnaire system
-- **Automated document generation** (6 documents per project)
+- **Automated document generation** (20+ documents per project)
 - **Constitutional compliance** validation from inception
 - **4-step development workflow** fully implemented
 - **Persistent memory systems** for multi-agent coordination
 - **Quality gates** preventing architectural drift
+- **Enhanced README reading** - CLI reads from Step 1-4 READMEs for context-aware generation
+
+## 🔧 Enhanced CLI Capabilities
+
+The CLI now reads contextual information from all step README files to generate more comprehensive and accurate documentation:
+
+- **Step 1**: Reads `step_1/README.md` for project discovery context and brutally honest market validation
+- **Step 2**: Reads `step_2/sparc_methodology_guide.md` for SPARC methodology principles and implementation guidance  
+- **Step 3**: Reads `step_3/README.md` for agentic system integration and expert context
+- **Step 4**: Reads `step_4/` templates for PACT framework implementation details
+
+This ensures all generated documents are informed by the complete framework methodology rather than using generic templates.
 
 ## 📚 Complete Documentation
 

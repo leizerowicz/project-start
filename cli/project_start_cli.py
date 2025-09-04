@@ -227,8 +227,17 @@ class ProjectStartCLI:
         return str(project_path)
 
     def generate_backlog(self, project_info: Dict[str, Any], project_path: str) -> None:
-        """Generate BACKLOG.md using project information"""
-        backlog_content = f"""# {project_info['name']} - Product Backlog
+        """Generate BACKLOG.md using project information and Step 1 README context"""
+        # Read Step 1 README for enhanced context
+        step_1_readme = Path(__file__).parent.parent / "step_1" / "README.md"
+        step_1_context = ""
+        if step_1_readme.exists():
+            with open(step_1_readme, 'r') as f:
+                step_1_content = f.read()
+                # Extract key areas from step 1 README for enhanced context
+                step_1_context = f"\n## Step 1 Framework Integration\nGenerated using Step 1 project discovery framework with brutally honest sales & marketing advisory context.\n"
+        
+        backlog_content = f"""# {project_info['name']} - Product Backlog{step_1_context}
 
 ## Project Overview
 {project_info['description']}
@@ -330,8 +339,17 @@ class ProjectStartCLI:
             f.write(backlog_content)
 
     def generate_implementation_guide(self, project_info: Dict[str, Any], project_path: str) -> None:
-        """Generate IMPLEMENTATION_GUIDE.md using project information"""
-        impl_content = f"""# {project_info['name']} - Implementation Guide
+        """Generate IMPLEMENTATION_GUIDE.md using project information and Step 1 README context"""
+        # Read Step 1 README for enhanced context
+        step_1_readme = Path(__file__).parent.parent / "step_1" / "README.md"
+        step_1_context = ""
+        if step_1_readme.exists():
+            with open(step_1_readme, 'r') as f:
+                step_1_content = f.read()
+                # Extract key implementation guidance from step 1 README
+                step_1_context = f"\n## Step 1 Discovery Integration\nThis implementation guide builds upon Step 1 project discovery framework, incorporating both technical requirements and honest market validation.\n"
+        
+        impl_content = f"""# {project_info['name']} - Implementation Guide{step_1_context}
 
 ## Technical Architecture Overview
 
@@ -482,8 +500,38 @@ class ProjectStartCLI:
             f.write(impl_content)
 
     def generate_risk_assessment(self, project_info: Dict[str, Any], project_path: str) -> None:
-        """Generate RISK_ASSESSMENT.md using project information"""
-        risk_content = f"""# {project_info['name']} - Risk Assessment
+        """Generate RISK_ASSESSMENT.md using project information and Step 1 README context"""
+        # Read Step 1 README for enhanced context and brutally honest advisory perspective
+        step_1_readme = Path(__file__).parent.parent / "step_1" / "README.md"
+        step_1_context = ""
+        market_reality_section = ""
+        if step_1_readme.exists():
+            with open(step_1_readme, 'r') as f:
+                step_1_content = f.read()
+                # Extract the brutally honest sales advisory context for market reality risks
+                step_1_context = f"\n## Step 1 Discovery Risk Integration\nRisk assessment enhanced with Step 1 brutally honest sales & marketing advisory context for market reality validation.\n"
+                market_reality_section = """
+### 10. Market Reality Risk (Step 1 Advisory Integration)
+**Risk Level**: High  
+**Description**: Project may be solving a problem people don't actually pay for or addressing assumptions not validated by market reality  
+**Impact**: Product-market fit failure, wasted development effort, inability to monetize  
+**Probability**: High (based on Step 1 honest market validation)  
+
+**Brutally Honest Questions to Address:**
+- Would target users pay $X for this solution right now?
+- Who would be devastated if this didn't exist?
+- What are we afraid to test because we know it might fail?
+- Are we solving this because it's important or because it's the only problem we know how to solve?
+
+**Mitigation Strategies:**
+- Conduct immediate market validation with paying customers
+- Test smallest possible version for actual payment willingness
+- Identify and interview users who naturally talk about similar solutions
+- Validate pain points through direct customer conversations, not surveys
+- Set 90-day revenue validation milestone to prove market demand
+"""
+        
+        risk_content = f"""# {project_info['name']} - Risk Assessment{step_1_context}
 
 ## Risk Assessment Overview
 
@@ -605,6 +653,8 @@ This document identifies potential risks that could impact project success and o
 - Regular dependency updates and security patches
 - Consider alternatives for critical dependencies
 
+{market_reality_section}
+
 ## Risk Monitoring and Review
 
 ### Constitutional Risk Monitoring
@@ -651,7 +701,16 @@ All risk mitigation strategies must pass constitutional validation:
             f.write(risk_content)
 
     def generate_file_outline(self, project_info: Dict[str, Any], project_path: str) -> None:
-        """Generate FILE_OUTLINE.md using project information"""
+        """Generate FILE_OUTLINE.md using project information and Step 1 README context"""
+        # Read Step 1 README for enhanced context
+        step_1_readme = Path(__file__).parent.parent / "step_1" / "README.md"
+        step_1_context = ""
+        if step_1_readme.exists():
+            with open(step_1_readme, 'r') as f:
+                step_1_content = f.read()
+                # Extract file structure guidance from step 1 README
+                step_1_context = f"\n## Step 1 Project Structure Integration\nFile structure informed by Step 1 discovery framework, ensuring project organization supports both development workflow and honest market validation.\n"
+        
         tech_stack = project_info.get('tech_stack', '')
         
         # Determine file structure based on tech stack
@@ -701,7 +760,7 @@ All risk mitigation strategies must pass constitutional validation:
                 ".env.example"
             ]
             
-        file_outline = f"""# {project_info['name']} - File Structure Outline
+        file_outline = f"""# {project_info['name']} - File Structure Outline{step_1_context}
 
 ## Project Organization Philosophy
 
@@ -1560,10 +1619,30 @@ compliance improvements across the organization.
         print("✅ Full workflow implementation ready")
 
     def generate_sparc_specification(self, project_path: str) -> None:
-        """Generate SPARC Specification document (Phase 1)"""
+        """Generate SPARC Specification document (Phase 1) with Step 2 methodology integration"""
         sparc_dir = Path(project_path) / "sparc"
         
-        spec_content = f"""# SPARC Specification Document (Phase 1)
+        # Read Step 2 SPARC methodology guide for enhanced context
+        step_2_sparc_guide = Path(__file__).parent.parent / "step_2" / "sparc_methodology_guide.md"
+        sparc_methodology_context = ""
+        if step_2_sparc_guide.exists():
+            with open(step_2_sparc_guide, 'r') as f:
+                sparc_content = f.read()
+                # Extract key methodology principles for specification phase
+                sparc_methodology_context = f"""
+## SPARC Methodology Integration
+Generated using SPARC (Specification, Pseudocode, Architecture, Refinement, Completion) methodology from Step 2 framework.
+
+### Phase 1 Objectives (from SPARC Guide)
+- Create comprehensive specification that serves as project foundation
+- Build upon existing Step 1 documents rather than starting from scratch
+- Convert backlog items into formal functional requirements
+- Include test-driven approach with testing criteria from specification phase
+- Ensure sequential development with comprehensive documentation
+
+"""
+        
+        spec_content = f"""# SPARC Specification Document (Phase 1){sparc_methodology_context}
 
 ## Existing Documents Review
 *Build upon Step 1 discovery documents with constitutional validation*
@@ -1671,10 +1750,30 @@ compliance improvements across the organization.
             f.write(spec_content)
 
     def generate_sparc_pseudocode(self, project_path: str) -> None:
-        """Generate SPARC Pseudocode document (Phase 2)"""
+        """Generate SPARC Pseudocode document (Phase 2) with Step 2 methodology integration"""
         sparc_dir = Path(project_path) / "sparc"
         
-        pseudocode_content = f"""# SPARC Pseudocode Document (Phase 2)
+        # Read Step 2 SPARC methodology guide for enhanced pseudocode context
+        step_2_sparc_guide = Path(__file__).parent.parent / "step_2" / "sparc_methodology_guide.md"
+        sparc_methodology_context = ""
+        if step_2_sparc_guide.exists():
+            with open(step_2_sparc_guide, 'r') as f:
+                sparc_content = f.read()
+                # Extract pseudocode phase principles
+                sparc_methodology_context = f"""
+## SPARC Phase 2 Integration
+Pseudocode development following SPARC methodology principles for algorithm design and logic flow.
+
+### Phase 2 Objectives (from SPARC Guide)
+- Transform specifications into algorithmic design and logic flow
+- Bridge gap between requirements and implementation
+- Create detailed pseudocode for all major system components
+- Validate logic flow before actual coding begins
+- Ensure test-driven approach with pseudocode validation
+
+"""
+        
+        pseudocode_content = f"""# SPARC Pseudocode Document (Phase 2){sparc_methodology_context}
 
 ## High-Level System Flow
 *Transform specifications into algorithmic design and logic flow*
@@ -1888,10 +1987,30 @@ All algorithms include mandatory constitutional validation checkpoints:
             f.write(pseudocode_content)
 
     def generate_sparc_architecture(self, project_path: str) -> None:
-        """Generate SPARC Architecture document (Phase 3)"""
+        """Generate SPARC Architecture document (Phase 3) with Step 2 methodology integration"""
         sparc_dir = Path(project_path) / "sparc"
         
-        architecture_content = f"""# SPARC Architecture Document (Phase 3)
+        # Read Step 2 SPARC methodology guide for enhanced architecture context
+        step_2_sparc_guide = Path(__file__).parent.parent / "step_2" / "sparc_methodology_guide.md"
+        sparc_methodology_context = ""
+        if step_2_sparc_guide.exists():
+            with open(step_2_sparc_guide, 'r') as f:
+                sparc_content = f.read()
+                # Extract architecture phase principles
+                sparc_methodology_context = f"""
+## SPARC Phase 3 Integration
+Architecture development following SPARC methodology for systematic system design and component interactions.
+
+### Phase 3 Objectives (from SPARC Guide)
+- Transform pseudocode into comprehensive system design
+- Define all component interactions and interfaces
+- Establish architectural patterns and design principles
+- Ensure scalability and maintainability from the start
+- Validate architecture against specifications and pseudocode
+
+"""
+        
+        architecture_content = f"""# SPARC Architecture Document (Phase 3){sparc_methodology_context}
 
 ## System Architecture Overview
 *Transform pseudocode into comprehensive system design with component interactions*
@@ -2189,10 +2308,30 @@ Design for growth while maintaining constitutional compliance at scale:
             f.write(architecture_content)
 
     def generate_sparc_refinement(self, project_path: str) -> None:
-        """Generate SPARC Refinement document (Phase 4)"""
+        """Generate SPARC Refinement document (Phase 4) with Step 2 methodology integration"""
         sparc_dir = Path(project_path) / "sparc"
         
-        refinement_content = f"""# SPARC Refinement Document (Phase 4)
+        # Read Step 2 SPARC methodology guide for enhanced refinement context
+        step_2_sparc_guide = Path(__file__).parent.parent / "step_2" / "sparc_methodology_guide.md"
+        sparc_methodology_context = ""
+        if step_2_sparc_guide.exists():
+            with open(step_2_sparc_guide, 'r') as f:
+                sparc_content = f.read()
+                # Extract refinement phase principles
+                sparc_methodology_context = f"""
+## SPARC Phase 4 Integration
+Refinement and testing following SPARC methodology for iterative improvement and comprehensive quality assurance.
+
+### Phase 4 Objectives (from SPARC Guide)
+- Iteratively improve design and implementation through testing
+- Implement comprehensive testing strategy and optimization
+- Refine architecture based on testing results and performance data
+- Ensure constitutional compliance through test-first development
+- Validate all components against specifications through rigorous testing
+
+"""
+        
+        refinement_content = f"""# SPARC Refinement Document (Phase 4){sparc_methodology_context}
 
 ## Testing Strategy
 *Iteratively improve design and implementation through comprehensive testing and optimization*
@@ -2515,10 +2654,30 @@ Based on pseudocode and architecture analysis:
             f.write(refinement_content)
 
     def generate_sparc_completion(self, project_path: str) -> None:
-        """Generate SPARC Completion document (Phase 5)"""
+        """Generate SPARC Completion document (Phase 5) with Step 2 methodology integration"""
         sparc_dir = Path(project_path) / "sparc"
         
-        completion_content = f"""# SPARC Completion Document (Phase 5)
+        # Read Step 2 SPARC methodology guide for enhanced completion context
+        step_2_sparc_guide = Path(__file__).parent.parent / "step_2" / "sparc_methodology_guide.md"
+        sparc_methodology_context = ""
+        if step_2_sparc_guide.exists():
+            with open(step_2_sparc_guide, 'r') as f:
+                sparc_content = f.read()
+                # Extract completion phase principles
+                sparc_methodology_context = f"""
+## SPARC Phase 5 Integration
+Completion and deployment following SPARC methodology for production-ready system with comprehensive constitutional compliance.
+
+### Phase 5 Objectives (from SPARC Guide)
+- Finalize project for production deployment with full documentation
+- Ensure comprehensive constitutional compliance throughout deployment
+- Establish post-deployment monitoring and maintenance procedures
+- Document lessons learned and best practices for future projects
+- Complete the systematic SPARC development cycle with production excellence
+
+"""
+        
+        completion_content = f"""# SPARC Completion Document (Phase 5){sparc_methodology_context}
 
 ## Deployment Strategy
 *Finalize project for production deployment with comprehensive constitutional compliance*
