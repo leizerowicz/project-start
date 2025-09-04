@@ -1022,7 +1022,7 @@ Complete with full operational structure
 
 ### Article I: Workflow-First Development ✓
 **Status**: COMPLIANT  
-**Evidence**: Step 1 → Step 2 → Step 3 → Step 4 progression documented in IMPLEMENTATION_GUIDE.md  
+**Evidence**: Step 1 -> Step 2 -> Step 3 -> Step 4 progression documented in IMPLEMENTATION_GUIDE.md  
 **Next Steps**: Proceed to enhanced Step 2 (constitutional SPARC methodology)
 
 ### Article III: Constitutional Compliance (NON-NEGOTIABLE) ✓  
@@ -1264,7 +1264,7 @@ Clarification resolution will be validated through constitutional gates in Step 
 4. **Agent Coordination**: {project_info.get('agent_coordination', 'TBD')}
 
 ## Constitutional Compliance Status
-- Article I (Workflow-First): ✓ Following Step 1→2→3→4 progression
+- Article I (Workflow-First): ✓ Following Step 1->2->3->4 progression
 - Article III (Constitutional Compliance): ✓ Quality gates established
 - Article IV (Specification-Driven): ✓ Specifications generated
 - Article VII (Simplicity): ✓ Simple-first approach documented
@@ -1556,8 +1556,8 @@ compliance improvements across the organization.
         
         # Generate complete Step 3 outputs based on step_3/README.md
         print("\n🧠 Setting up persistent context systems...")
-        self.generate_copilot_instructions(project_path)
         self.generate_expert_context_files(project_path)
+        self.generate_copilot_instructions(project_path)
         self.generate_agent_coordination(project_path)
         self.generate_agentic_framework_experts(project_path)
         self.generate_agent_hooks_system(project_path)
@@ -2168,9 +2168,9 @@ Audit_Log Table:
 ```
 
 ### Data Flow Patterns
-1. **User Request Flow**: UI → API → Business Logic → Data Layer → Response
-2. **Validation Flow**: Input → Client Validation → Server Validation → Constitutional Validation → Processing
-3. **Audit Flow**: All Operations → Audit Service → Audit Database → Compliance Reports
+1. **User Request Flow**: UI -> API -> Business Logic -> Data Layer -> Response
+2. **Validation Flow**: Input -> Client Validation -> Server Validation -> Constitutional Validation -> Processing
+3. **Audit Flow**: All Operations -> Audit Service -> Audit Database -> Compliance Reports
 
 ### Constitutional Data Principles
 - **Traceability**: All data changes tracked with constitutional compliance
@@ -3031,8 +3031,91 @@ The constitutional SPARC implementation establishes a foundation for continuous 
         with open(sparc_dir / "SPARC_COMPLETION.md", 'w') as f:
             f.write(completion_content)
 
+    def load_memory_content(self, project_dir: Path) -> Dict[str, Any]:
+        """Load content from memory system files"""
+        memory_dir = Path(__file__).parent.parent / "memory"
+        project_memory_dir = project_dir / "memory"
+        
+        memory_content = {
+            "project_name": "Unknown Project",
+            "current_phase": "Unknown",
+            "progress_percentage": 0,
+            "active_priorities": "No active priorities found",
+            "compliance_score": 0,
+            "feature_summary": "No features defined",
+            "priority_items": "No priority items found",
+            "tech_stack": "Not specified",
+            "architecture_approach": "Not specified",
+            "top_risks": "No risks identified",
+            "mitigation_status": "Not specified",
+            "project_structure": "Not defined",
+            "organization_principles": "Not specified"
+        }
+        
+        # Load project memory
+        project_memory_path = project_memory_dir / "project_memory.md" if project_memory_dir.exists() else memory_dir / "project_memory.md"
+        if project_memory_path.exists():
+            with open(project_memory_path, 'r') as f:
+                content = f.read()
+                # Extract key information from project memory
+                if "Project Name" in content or "name" in content:
+                    import re
+                    name_match = re.search(r'"name":\s*"([^"]+)"', content)
+                    if name_match:
+                        memory_content["project_name"] = name_match.group(1)
+                if "Phase" in content:
+                    phase_match = re.search(r'Phase.*?:\s*(.+)', content)
+                    if phase_match:
+                        memory_content["current_phase"] = phase_match.group(1).strip()
+                if "tech_stack" in content:
+                    tech_match = re.search(r'"tech_stack":\s*"([^"]+)"', content)
+                    if tech_match:
+                        memory_content["tech_stack"] = tech_match.group(1)
+        
+        # Load constitutional memory for compliance score
+        const_memory_path = project_memory_dir / "constitutional_memory.md" if project_memory_dir.exists() else memory_dir / "constitutional_memory.md"
+        if const_memory_path.exists():
+            with open(const_memory_path, 'r') as f:
+                content = f.read()
+                if "Constitutional Adherence" in content:
+                    import re
+                    score_match = re.search(r'Constitutional Adherence.*?(\d+)%', content)
+                    if score_match:
+                        memory_content["compliance_score"] = int(score_match.group(1))
+        
+        # Load from project files if they exist
+        backlog_path = project_dir / "BACKLOG.md"
+        if backlog_path.exists():
+            with open(backlog_path, 'r') as f:
+                content = f.read()[:200]  # First 200 chars for summary
+                memory_content["feature_summary"] = content.strip()
+        
+        impl_guide_path = project_dir / "IMPLEMENTATION_GUIDE.md"
+        if impl_guide_path.exists():
+            with open(impl_guide_path, 'r') as f:
+                content = f.read()
+                if "Technology Stack" in content:
+                    import re
+                    tech_match = re.search(r'Technology Stack.*?:\s*(.+)', content, re.IGNORECASE)
+                    if tech_match:
+                        memory_content["tech_stack"] = tech_match.group(1).strip()
+        
+        return memory_content
+    
+    def load_expert_files(self, project_dir: Path) -> List[str]:
+        """Load list of available expert files"""
+        expert_dir = project_dir / "expert_files"
+        expert_files = []
+        
+        if expert_dir.exists():
+            for file_path in expert_dir.glob("*.md"):
+                expert_name = file_path.stem.replace("_expert", "").replace("_", " ").title()
+                expert_files.append(f"- **{expert_name} Expert** (`expert_files/{file_path.name}`)")
+        
+        return expert_files
+    
     def generate_copilot_instructions(self, project_path: str) -> None:
-        """Generate comprehensive copilot instructions in .github folder"""
+        """Generate comprehensive copilot instructions in .github folder with functional expert routing and memory systems"""
         project_dir = Path(project_path)
         github_dir = project_dir / ".github"
         
@@ -3042,12 +3125,102 @@ The constitutional SPARC implementation establishes a foundation for continuous 
         # Load the comprehensive template
         template_path = Path(__file__).parent.parent / "templates" / "constitutional_copilot_instructions.md"
         
+        # Load memory content and expert files
+        memory_content = self.load_memory_content(project_dir)
+        expert_files = self.load_expert_files(project_dir)
+        
         if template_path.exists():
             with open(template_path, 'r') as f:
                 template_content = f.read()
             
-            # Enhance template with project-specific context
-            instructions_content = template_content + f"""
+            # Replace placeholders with actual content from memory system
+            enhanced_template = template_content.replace(
+                "[LOADED FROM memory/project_memory.md]", memory_content["project_name"]
+            ).replace(
+                "[WORKFLOW_STEP]", memory_content["current_phase"]
+            ).replace(
+                "[COMPLETION_PERCENTAGE]", str(memory_content["progress_percentage"])
+            ).replace(
+                "[CURRENT_PRIORITIES]", memory_content["active_priorities"]
+            ).replace(
+                "[COMPLIANCE_SCORE]", str(memory_content["compliance_score"])
+            ).replace(
+                "[FEATURE_SUMMARY]", memory_content["feature_summary"]
+            ).replace(
+                "[PRIORITY_ITEMS]", memory_content["priority_items"]
+            ).replace(
+                "[TECH_STACK]", memory_content["tech_stack"]
+            ).replace(
+                "[ARCHITECTURE_APPROACH]", memory_content["architecture_approach"]
+            ).replace(
+                "[TOP_RISKS]", memory_content["top_risks"]
+            ).replace(
+                "[MITIGATION_STATUS]", memory_content["mitigation_status"]
+            ).replace(
+                "[PROJECT_STRUCTURE]", memory_content["project_structure"]
+            ).replace(
+                "[ORGANIZATION_PRINCIPLES]", memory_content["organization_principles"]
+            )
+            
+            # Add expert routing system and coordination commands
+            expert_routing_section = f"""
+
+## Expert Routing System
+
+### Available Expert Files
+{chr(10).join(expert_files) if expert_files else "- No expert files found. Run enhance-step-3 to generate expert context files."}
+
+### Expert Routing Logic
+**Use this decision tree to determine which expert to consult:**
+
+1. **Architecture & Design Questions** -> `expert_files/architecture_expert.md`
+   - System design, component architecture, scalability concerns
+   - Integration patterns, service boundaries
+
+2. **Technology Stack Questions** -> `expert_files/tech_stack_expert.md`  
+   - Framework selection, library choices, tool configurations
+   - Performance optimization, technology-specific patterns
+
+3. **Development Process Questions** -> `expert_files/methodology_expert.md`
+   - Testing strategies, deployment processes, development workflows
+   - Quality assurance, code review practices
+
+4. **Cross-Domain Questions** -> Consult multiple experts or use coordination commands
+
+### Expert Coordination Commands
+
+#### Workflow State Assessment
+```
+@copilot assess-workflow-state
+```
+- Reviews completion status of Steps 1-4
+- Identifies workflow dependencies and blockers
+- Recommends next actions for workflow progression
+- Validates expert system alignment with other steps
+
+#### Cross-Step Integration Validation  
+```
+@copilot validate-integration
+```
+- Checks alignment between expert recommendations and Step 1 requirements
+- Verifies expert guidance supports Step 2 SPARC methodology
+- Validates expert coordination uses Step 4 PACT principles effectively
+- Ensures no conflicts between expert domains and other workflow steps
+
+#### Expert System Coordination
+```
+@copilot coordinate-experts
+```
+- Identifies which expert domains are needed for current task
+- Orchestrates multi-expert collaboration for complex decisions
+- Resolves conflicts between different expert recommendations
+- Optimizes expert knowledge sharing and collaboration patterns
+
+#### Memory System Commands
+```
+@copilot sync-context --force-refresh
+@copilot memory-health-check --validate-currency
+```
 
 ## Project-Specific Context
 
@@ -3056,88 +3229,140 @@ This copilot-instructions file enables autonomous AI task completion after all P
 
 #### Workflow Status
 - Step 1: ✅ Discovery & Planning (BACKLOG.md, IMPLEMENTATION_GUIDE.md, RISK_ASSESSMENT.md, FILE_OUTLINE.md)
-- Step 2: ✅ Constitutional SPARC (Specification, Planning, Action, Review, Completion)
+- Step 2: ✅ Constitutional SPARC (Specification, Planning, Action, Review, Completion)  
 - Step 3: ✅ Expert Context & Agentic Integration (This file enables autonomous operation)
 - Step 4: ✅ PACT Implementation (Planning, Action, Coordination, Testing)
 
 #### Autonomous Task Execution Protocol
 When all steps are complete, AI agents can autonomously implement features by:
 
-1. **Context Loading**: Automatically reference all Step 1-4 documentation
-2. **Constitutional Compliance**: Follow established governance principles
-3. **Feature Implementation**: Execute based on specifications in BACKLOG.md
-4. **Quality Assurance**: Apply test-first development and validation gates
-5. **Documentation Updates**: Maintain project documentation and memory systems
+1. **Context Loading**: Automatically reference all Step 1-4 documentation and memory systems
+2. **Expert Consultation**: Use expert routing system to get domain-specific guidance
+3. **Constitutional Compliance**: Follow established governance principles
+4. **Feature Implementation**: Execute based on specifications in BACKLOG.md
+5. **Quality Assurance**: Apply test-first development and validation gates
+6. **Memory Updates**: Update memory systems with decisions and lessons learned
 
 #### Human-AI Collaboration Model
 - **Human Role**: Major architectural decisions, requirements clarification, strategic planning
-- **AI Role**: Feature implementation, testing, code generation, documentation maintenance
+- **AI Role**: Feature implementation, testing, code generation, documentation maintenance  
+- **Expert System**: Domain-specific guidance and decision support
 - **Handoff Protocol**: Clear decision boundaries and escalation procedures
 
 #### Feature Implementation Automation
 For new features, AI agents should:
-1. Consult BACKLOG.md for requirements and priority
-2. Reference IMPLEMENTATION_GUIDE.md for technical constraints
-3. Check RISK_ASSESSMENT.md for relevant risks and mitigations
-4. Follow FILE_OUTLINE.md for proper code organization
-5. Apply constitutional principles throughout implementation
-6. Update memory systems with decisions and lessons learned
+1. **Load Context**: Check memory systems for current project state and decisions
+2. **Route to Experts**: Use expert routing system for domain-specific guidance
+3. **Consult BACKLOG.md**: Get requirements and priority information
+4. **Reference IMPLEMENTATION_GUIDE.md**: Follow technical constraints and patterns
+5. **Check RISK_ASSESSMENT.md**: Address relevant risks and mitigations
+6. **Follow FILE_OUTLINE.md**: Organize code according to project structure
+7. **Apply Constitutional Principles**: Maintain governance compliance throughout
+8. **Update Memory Systems**: Document decisions and lessons learned
 
 ---
 *Generated by Project-Start Enhanced CLI - Step 3*
 *Date: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}*
-*Location: .github/copilot-instructions.md - Ready for autonomous AI operation*
+*Location: .github/copilot-instructions.md - Expert Routing & Memory Systems Enabled*
 """
+            instructions_content = enhanced_template + expert_routing_section
         else:
-            # Fallback content if template is not found
+            # Fallback content if template is not found - create comprehensive instructions
+            expert_files_list = chr(10).join(expert_files) if expert_files else "- No expert files found. Run enhance-step-3 to generate expert context files."
+            
             instructions_content = f"""# Project-Start Enhanced Copilot Instructions
 
-## Project Context and Autonomous Operation
-This document enables autonomous AI task completion after all Project-Start workflow steps are complete.
+## Project Context and Memory System Integration
+
+### Current Project State (Loaded from Memory)
+- **Project Name**: {memory_content["project_name"]}
+- **Current Phase**: {memory_content["current_phase"]}
+- **Progress**: {memory_content["progress_percentage"]}%
+- **Active Priorities**: {memory_content["active_priorities"]}
+- **Constitutional Compliance**: {memory_content["compliance_score"]}/100
+
+### Project Foundation (Auto-Loaded)
+- **BACKLOG.md**: {memory_content["feature_summary"]}
+- **IMPLEMENTATION_GUIDE.md**: {memory_content["tech_stack"]} - {memory_content["architecture_approach"]}
+- **RISK_ASSESSMENT.md**: {memory_content["top_risks"]} - {memory_content["mitigation_status"]}
+- **FILE_OUTLINE.md**: {memory_content["project_structure"]} - {memory_content["organization_principles"]}
 
 ## Constitutional Principles (ALWAYS ENFORCE)
 All agents must follow these non-negotiable principles:
-1. **Workflow-First**: All work follows Step 1→2→3→4 progression
-2. **Constitutional Compliance**: Validate all decisions against governance principles
-3. **Test-First Development**: Tests before implementation, Red-Green-Refactor
-4. **Specification-Driven**: Implementation must trace to specifications
-5. **Memory-Driven Context**: Update memory with decisions and lessons learned
-6. **Agent Coordination**: Follow multi-agent governance protocols
-7. **Simplicity**: Start simple, add complexity only when justified
-8. **Continuous Validation**: Quality gates at every transition
+1. **Workflow-First**: All work follows Step 1->2->3->4 progression
+2. **Persistent Context**: Always consult memory before asking questions
+3. **Constitutional Compliance**: Validate all decisions against governance principles
+4. **Test-First Development**: Tests before implementation, Red-Green-Refactor
+5. **Specification-Driven**: Implementation must trace to specifications
+6. **Memory-Driven Context**: Update memory with decisions and lessons learned
+7. **Agent Coordination**: Follow multi-agent governance protocols
+8. **Simplicity**: Start simple, add complexity only when justified
+9. **Continuous Validation**: Quality gates at every transition
 
-## Workflow Status & Autonomous Operation
-- Step 1: ✅ Discovery & Planning Complete
-- Step 2: ✅ Constitutional SPARC Complete  
-- Step 3: ✅ Expert Context Complete
-- Step 4: ✅ PACT Implementation Ready
-- **Status**: READY FOR AUTONOMOUS AI OPERATION
+## Expert Routing System
+
+### Available Expert Files
+{expert_files_list}
+
+### Expert Routing Logic
+**Use this decision tree to determine which expert to consult:**
+
+1. **Architecture & Design Questions** -> `expert_files/architecture_expert.md`
+   - System design, component architecture, scalability concerns
+
+2. **Technology Stack Questions** -> `expert_files/tech_stack_expert.md`
+   - Framework selection, library choices, tool configurations
+
+3. **Development Process Questions** -> `expert_files/methodology_expert.md`
+   - Testing strategies, deployment processes, development workflows
+
+### Memory System Integration
+
+#### Before Making ANY Decision - Check Memory Sources:
+1. **Project Memory** (`memory/project_memory.md`): Current state, decisions, constraints
+2. **Constitutional Memory** (`memory/constitutional_memory.md`): Compliance status, violations
+3. **Lesson Memory** (`memory/lesson_memory.md`): Successful patterns, pitfalls
+
+#### After Making Decisions - Update Memory:
+- Document decision rationale and constitutional basis
+- Update project state and phase progress
+- Record lessons learned and pattern recognition
+
+## Expert Coordination Commands
+
+### @copilot assess-workflow-state
+- Reviews completion status of Steps 1-4
+- Identifies workflow dependencies and blockers
+- Validates expert system alignment
+
+### @copilot coordinate-experts  
+- Identifies needed expert domains for current task
+- Orchestrates multi-expert collaboration
+- Resolves conflicts between expert recommendations
+
+### @copilot sync-context --force-refresh
+- Refreshes memory system content
+- Validates currency of project context
 
 ## Quality Gates (NEVER BYPASS)
 Before any implementation:
 - [ ] Requirements exist in specifications
 - [ ] Tests written and confirmed to FAIL
 - [ ] Constitutional validation passed
-- [ ] Implementation traces to specification
+- [ ] Expert consultation completed
 - [ ] Memory system updated with decisions
 
-## Human-AI Collaboration Model
-- **Human Role**: Major architectural decisions, requirements, strategy
-- **AI Role**: Feature implementation, testing, documentation, maintenance
-- **Handoff**: Clear boundaries and escalation procedures established
-
 ## Feature Implementation Protocol
-1. Consult BACKLOG.md for requirements and priority
-2. Reference IMPLEMENTATION_GUIDE.md for technical approach
-3. Check RISK_ASSESSMENT.md for relevant mitigations
-4. Follow FILE_OUTLINE.md for code organization
-5. Apply constitutional principles throughout
-6. Update memory systems with decisions
+1. **Load Context**: Check memory systems for current project state
+2. **Route to Experts**: Use expert routing system for domain guidance
+3. **Consult BACKLOG.md**: Get requirements and priority information
+4. **Apply Constitutional Principles**: Maintain governance compliance
+5. **Update Memory Systems**: Document decisions and lessons learned
 
 ---
 *Generated by Project-Start Enhanced CLI - Step 3*
 *Date: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}*
-*Location: .github/copilot-instructions.md - Autonomous Operation Ready*
+*Location: .github/copilot-instructions.md - Expert Routing & Memory Systems Enabled*
 """
         
         with open(github_dir / "copilot-instructions.md", 'w') as f:
