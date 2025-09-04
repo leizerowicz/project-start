@@ -62,16 +62,10 @@ Applies Spec-Kit's `/plan` automation to Project-Start's SPARC methodology with 
 ```
 specs/001-chat-application/sparc/
 ├── SPARC_SPECIFICATION.md (formal requirements with constitutional compliance)
-├── SPARC_PSEUDOCODE.md (algorithm design with test scenarios)
-├── SPARC_ARCHITECTURE.md (system design with constitutional constraints)
-├── SPARC_REFINEMENT.md (testing strategy with test-first mandates)
-├── SPARC_COMPLETION.md (deployment with quality validation)
-├── implementation_details/
-│   ├── research.md (technology stack validation)
-│   ├── data_models.md (constitutional data design)
-│   ├── api_contracts.md (interface specifications)
-│   └── test_scenarios.md (comprehensive test coverage)
-└── constitutional_gates.md (validation checkpoints for each phase)
+├── SPARC_PSEUDOCODE.md (algorithm design and logic flow)
+├── SPARC_ARCHITECTURE.md (system design and component interactions)
+├── SPARC_REFINEMENT.md (testing strategy and quality improvements)
+└── SPARC_COMPLETION.md (deployment and maintenance procedures)
 ```
 
 ### `/enhance-step-3`
