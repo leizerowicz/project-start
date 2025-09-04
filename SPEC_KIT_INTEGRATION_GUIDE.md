@@ -50,17 +50,20 @@ Each step generates comprehensive, constitutional-compliant documents:
 - `clarification_needed.md` - Areas requiring stakeholder input
 
 **Step 2 Outputs (SPARC methodology):**
-- `sparc/spec.md` - Technical specification with constitutional compliance
-- `sparc/plan.md` - Implementation plan with test-first mandates
-- `sparc/research.md` - Technology research and validation
-- `sparc/context.md` - Project context for agents
+- `sparc/SPARC_SPECIFICATION.md` - Formal requirements with constitutional compliance
+- `sparc/SPARC_PSEUDOCODE.md` - Algorithm design and logic flow  
+- `sparc/SPARC_ARCHITECTURE.md` - System design and component interactions
+- `sparc/SPARC_REFINEMENT.md` - Testing strategy and quality improvements
+- `sparc/SPARC_COMPLETION.md` - Deployment and maintenance procedures
 
 **Step 3 Outputs (Persistent context):**
 - `.github/copilot-instructions.md` - Comprehensive autonomous agent context file
-- Expert context files for specialized domains (architecture_expert.md, tech_stack_expert.md, etc.)
-- Agent coordination and communication protocols
-- Agentic framework experts for multi-agent coordination
-- Agent hooks system for workflow automation
+- `expert_files/architecture_expert.md` - Architecture and design expert context
+- `expert_files/tech_stack_expert.md` - Technology stack expert context  
+- `expert_files/methodology_expert.md` - Development methodology expert context
+- `agent_coordination.md` - Multi-agent coordination protocols
+- `agentic_framework_experts.md` - Multi-agent coordination framework
+- `agent_hooks.md` - Workflow automation system
 
 **Step 4 Outputs (PACT framework):**
 - Core PACT documents: `AGENT_ECOSYSTEM_DESIGN.md`, `COORDINATION_STRATEGY.md`, `COLLABORATIVE_WORKFLOWS.md`, `AGENTIC_TESTING_FRAMEWORK.md`
