@@ -1,0 +1,23 @@
+{
+    "recommendations": [
+        "ms-python.python",
+        "ms-python.black-formatter",
+        "ms-python.pylint",
+        "github.copilot",
+        "github.copilot-chat",
+        "ms-vscode.vscode-json",
+        "yzhang.markdown-all-in-one",
+        "davidanson.vscode-markdownlint",
+        "streetsidesoftware.code-spell-checker",
+        "ms-vscode.task-runner",
+        "ms-vscode.test-adapter-converter",
+        "formulahendry.code-runner",
+        "eamodio.gitlens",
+        "ms-vscode.vscode-git-graph",
+        "redhat.vscode-yaml",
+        "ms-vscode.vscode-typescript-next"
+    ],
+    "unwantedRecommendations": [
+        "ms-python.flake8"
+    ]
+}

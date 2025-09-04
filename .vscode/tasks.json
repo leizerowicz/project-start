@@ -1,0 +1,169 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Project Start: Enhanced Workflow",
+            "type": "shell",
+            "command": "python3",
+            "args": ["cli/project_start_cli.py", "/project-start-enhanced"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [],
+            "detail": "Run complete Project-Start enhanced workflow with auto-detection"
+        },
+        {
+            "label": "Project Start: Step 1 - Discovery",
+            "type": "shell",
+            "command": "python3",
+            "args": ["cli/project_start_cli.py", "/enhance-step-1"],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [],
+            "detail": "Interactive project discovery and specification generation"
+        },
+        {
+            "label": "Project Start: Step 1 - Existing Project",
+            "type": "shell",
+            "command": "python3",
+            "args": ["cli/project_start_cli.py", "/enhance-step-1", "--existing-project"],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [],
+            "detail": "Enhance existing project with Project-Start methodology"
+        },
+        {
+            "label": "Project Start: Step 2 - SPARC Planning",
+            "type": "shell",
+            "command": "python3",
+            "args": ["cli/project_start_cli.py", "/enhance-step-2", "--project-path", "${workspaceFolder}"],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [],
+            "detail": "Generate constitutional SPARC methodology documents"
+        },
+        {
+            "label": "Project Start: Step 3 - Context Systems",
+            "type": "shell",
+            "command": "python3",
+            "args": ["cli/project_start_cli.py", "/enhance-step-3", "--project-path", "${workspaceFolder}"],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [],
+            "detail": "Create persistent context and expert systems"
+        },
+        {
+            "label": "Project Start: Step 4 - PACT Framework", 
+            "type": "shell",
+            "command": "python3",
+            "args": ["cli/project_start_cli.py", "/enhance-step-4", "--project-path", "${workspaceFolder}"],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [],
+            "detail": "Deploy constitutional PACT framework"
+        },
+        {
+            "label": "Project Start: Check Prerequisites",
+            "type": "shell",
+            "command": "./scripts/check-project-prerequisites.sh",
+            "group": "test",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [],
+            "detail": "Validate project prerequisites and structure"
+        },
+        {
+            "label": "Project Start: Update Agent Context",
+            "type": "shell", 
+            "command": "./scripts/update-agent-context.sh",
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [],
+            "detail": "Update copilot instructions with current project context"
+        },
+        {
+            "label": "Project Start: Get Project Paths",
+            "type": "shell",
+            "command": "./scripts/get-project-paths.sh",
+            "group": "test",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [],
+            "detail": "Display current project paths and structure"
+        }
+    ]
+}

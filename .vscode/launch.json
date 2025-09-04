@@ -1,0 +1,44 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Project Start: Debug Enhanced Workflow",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/cli/project_start_cli.py",
+            "args": ["/project-start-enhanced", "--debug"],
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}",
+                "PROJECT_START_VSCODE": "true"
+            }
+        },
+        {
+            "name": "Project Start: Debug Step 1",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/cli/project_start_cli.py",
+            "args": ["/enhance-step-1", "--debug"],
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}",
+                "PROJECT_START_VSCODE": "true"
+            }
+        },
+        {
+            "name": "Project Start: Debug Existing Project",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/cli/project_start_cli.py",
+            "args": ["/enhance-step-1", "--existing-project", "--debug"],
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}",
+                "PROJECT_START_VSCODE": "true"
+            }
+        }
+    ]
+}

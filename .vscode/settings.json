@@ -1,0 +1,40 @@
+{
+    "files.associations": {
+        "*.md": "markdown"
+    },
+    "python.defaultInterpreterPath": "python3",
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+    "python.formatting.provider": "black",
+    "editor.formatOnSave": true,
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "terminal.integrated.cwd": "${workspaceFolder}",
+    "files.exclude": {
+        "**/__pycache__": true,
+        "**/*.pyc": true,
+        "**/node_modules": true,
+        "**/.git": false
+    },
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/__pycache__": true
+    },
+    "markdown.preview.breaks": true,
+    "markdown.preview.linkify": true,
+    "workbench.tree.indent": 20,
+    "explorer.sortOrder": "type",
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "editor.rulers": [80, 120],
+    "workbench.editor.enablePreview": false,
+    "editor.minimap.enabled": true,
+    "editor.wordWrap": "on",
+    "git.confirmSync": false,
+    "git.autofetch": true,
+    "extensions.ignoreRecommendations": false,
+    "projectStart.autoDetectProjectRoot": true,
+    "projectStart.defaultTechStack": "auto-detect",
+    "projectStart.enableConstitutionalValidation": true
+}
