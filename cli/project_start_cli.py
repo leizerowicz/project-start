@@ -5172,7 +5172,7 @@ Status: ALL STEPS COMPLETED - Project ready for implementation
             f.write(memory_update)
 
 def main():
-    parser = argparse.ArgumentParser(description='Project-Start Enhanced CLI')
+    parser = argparse.ArgumentParser(description='Project-Start Enhanced CLI - Optimized for minimal AI usage')
     parser.add_argument('command', help='Command to execute')
     parser.add_argument('description', nargs='?', help='Project description')
     parser.add_argument('--project-path', help='Path to existing project')
@@ -5206,12 +5206,13 @@ def main():
         else:
             print(f"❌ Unknown command: {args.command}")
             print("\nAvailable commands:")
-            print("  /project-start-enhanced [description] - Complete workflow with defaults")
-            print("  /enhance-step-1 [description] - Interactive discovery & planning")
+            print("  /project-start-enhanced [description] - Complete workflow with defaults (optimized)")
+            print("  /enhance-step-1 [description] - Interactive discovery & planning (batch questions)")
             print("  /enhance-step-1 [description] --existing-project - Work with existing project")
             print("  /enhance-step-2 --project-path <path> - Constitutional SPARC methodology")
             print("  /enhance-step-3 --project-path <path> - Persistent context systems")
             print("  /enhance-step-4 --project-path <path> - Constitutional PACT framework")
+            print("\n💰 CLI now optimized to use single AI requests to save on copilot usage costs!")
             
     except KeyboardInterrupt:
         print("\n\n👋 Operation cancelled by user.")
