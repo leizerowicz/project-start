@@ -371,6 +371,290 @@ class ProjectStartCLI:
             else:
                 print("Please answer 'y' or 'n'")
 
+    def show_interactive_menu(self) -> None:
+        """Display interactive menu for command selection"""
+        while True:
+            self.show_banner()
+            self.show_copilot_integration_status()
+
+            print("🚀 PROJECT-START ENHANCED - Interactive Command Menu")
+            print("=" * 60)
+            print()
+            print("Available Commands:")
+            print()
+            print("1. 🌟 Start New Project (Complete Workflow)")
+            print("   └─ Full 4-step enhanced workflow for new projects")
+            print()
+            print("2. 🔍 Step 1: Interactive Discovery")
+            print("   └─ Comprehensive project specification generation")
+            print()
+            print("3. 📋 Step 2: SPARC Planning")
+            print("   └─ Constitutional SPARC methodology implementation")
+            print()
+            print("4. 🧠 Step 3: Context Systems")
+            print("   └─ Persistent context and expert systems creation")
+            print()
+            print("5. 🤝 Step 4: PACT Framework")
+            print("   └─ Constitutional PACT framework deployment")
+            print()
+            print("6. ⚙️  Configure Project Root")
+            print("   └─ Set up project root configuration")
+            print()
+            print("7. ❓ Help & Documentation")
+            print("   └─ View available commands and usage examples")
+            print()
+            print("0. 🚪 Exit")
+            print()
+
+            try:
+                choice = input("Select an option (0-7): ").strip()
+
+                if choice == "0":
+                    print(
+                        "\n👋 Goodbye! Thank you for using Project-Start Enhanced CLI."
+                    )
+                    break
+                elif choice == "1":
+                    self._handle_start_new_project()
+                elif choice == "2":
+                    self._handle_step_1()
+                elif choice == "3":
+                    self._handle_step_2()
+                elif choice == "4":
+                    self._handle_step_3()
+                elif choice == "5":
+                    self._handle_step_4()
+                elif choice == "6":
+                    self._handle_configure_project_root()
+                elif choice == "7":
+                    self._show_help_documentation()
+                else:
+                    print(f"\n❌ Invalid option: {choice}")
+                    print("Please select a number between 0-7")
+                    input("\nPress Enter to continue...")
+
+            except KeyboardInterrupt:
+                print("\n\n🛑 Operation cancelled by user")
+                break
+            except Exception as e:
+                print(f"\n❌ Error: {e}")
+                input("\nPress Enter to continue...")
+
+    def _handle_start_new_project(self) -> None:
+        """Handle the start new project command"""
+        print("\n" + "=" * 60)
+        print("🌟 STARTING NEW PROJECT - Complete Enhanced Workflow")
+        print("=" * 60)
+        print()
+        print("This will run the complete 4-step Project-Start workflow:")
+        print("• Step 1: Interactive discovery and specification generation")
+        print("• Step 2: Constitutional SPARC methodology planning")
+        print("• Step 3: Persistent context systems creation")
+        print("• Step 4: Constitutional PACT framework deployment")
+        print()
+
+        if not self.ask_yes_no("Continue with complete workflow?", True):
+            return
+
+        description = self.ask_question("Enter your project description")
+        print(f"\n🚀 Starting enhanced workflow for: {description}")
+
+        try:
+            self.project_start_enhanced_workflow(description)
+            print("\n✅ Complete workflow finished successfully!")
+        except Exception as e:
+            print(f"\n❌ Workflow error: {e}")
+
+        input("\nPress Enter to return to main menu...")
+
+    def _handle_step_1(self) -> None:
+        """Handle Step 1: Interactive Discovery"""
+        print("\n" + "=" * 60)
+        print("🔍 STEP 1: Interactive Discovery & Specification Generation")
+        print("=" * 60)
+        print()
+        print("This step will:")
+        print("• Collect comprehensive project requirements")
+        print("• Generate user stories and feature backlog")
+        print("• Create implementation guidance")
+        print("• Assess risks and mitigation strategies")
+        print("• Generate file structure recommendations")
+        print()
+
+        existing_project = self.ask_yes_no("Is this for an existing project?", False)
+        description = self.ask_question("Enter project description")
+
+        print(f"\n🔍 Running Step 1 for: {description}")
+        print(
+            f"Mode: {'Existing Project Analysis' if existing_project else 'New Project Discovery'}"
+        )
+
+        try:
+            self.enhance_step_1(description, existing_project)
+            print("\n✅ Step 1 completed successfully!")
+        except Exception as e:
+            print(f"\n❌ Step 1 error: {e}")
+
+        input("\nPress Enter to return to main menu...")
+
+    def _handle_step_2(self) -> None:
+        """Handle Step 2: SPARC Planning"""
+        print("\n" + "=" * 60)
+        print("📋 STEP 2: SPARC Planning & Constitutional Methodology")
+        print("=" * 60)
+        print()
+        print("This step will:")
+        print("• Apply constitutional SPARC methodology")
+        print("• Generate formal specifications")
+        print("• Create pseudocode and architecture plans")
+        print("• Establish testing and quality strategies")
+        print()
+
+        project_path = self.ask_question(
+            "Enter project path (or press Enter for current directory)", "", False
+        )
+
+        print(f"\n📋 Running Step 2...")
+        print(f"Project path: {project_path or 'Current directory'}")
+
+        try:
+            self.enhance_step_2(project_path)
+            print("\n✅ Step 2 completed successfully!")
+        except Exception as e:
+            print(f"\n❌ Step 2 error: {e}")
+
+        input("\nPress Enter to return to main menu...")
+
+    def _handle_step_3(self) -> None:
+        """Handle Step 3: Context Systems"""
+        print("\n" + "=" * 60)
+        print("🧠 STEP 3: Context Systems & Expert Domain Creation")
+        print("=" * 60)
+        print()
+        print("This step will:")
+        print("• Create persistent context systems")
+        print("• Generate expert domain specializations")
+        print("• Set up multi-agent coordination protocols")
+        print("• Configure automated context management")
+        print()
+
+        project_path = self.ask_question(
+            "Enter project path (or press Enter for current directory)", "", False
+        )
+
+        print(f"\n🧠 Running Step 3...")
+        print(f"Project path: {project_path or 'Current directory'}")
+
+        try:
+            self.enhance_step_3(project_path)
+            print("\n✅ Step 3 completed successfully!")
+        except Exception as e:
+            print(f"\n❌ Step 3 error: {e}")
+
+        input("\nPress Enter to return to main menu...")
+
+    def _handle_step_4(self) -> None:
+        """Handle Step 4: PACT Framework"""
+        print("\n" + "=" * 60)
+        print("🤝 STEP 4: PACT Framework & Constitutional Governance")
+        print("=" * 60)
+        print()
+        print("This step will:")
+        print("• Deploy constitutional PACT framework")
+        print("• Create multi-agent coordination systems")
+        print("• Establish quality assurance protocols")
+        print("• Set up automated governance")
+        print()
+
+        project_path = self.ask_question(
+            "Enter project path (or press Enter for current directory)", "", False
+        )
+
+        print(f"\n🤝 Running Step 4...")
+        print(f"Project path: {project_path or 'Current directory'}")
+
+        try:
+            self.enhance_step_4(project_path)
+            print("\n✅ Step 4 completed successfully!")
+        except Exception as e:
+            print(f"\n❌ Step 4 error: {e}")
+
+        input("\nPress Enter to return to main menu...")
+
+    def _handle_configure_project_root(self) -> None:
+        """Handle project root configuration"""
+        print("\n" + "=" * 60)
+        print("⚙️  CONFIGURE PROJECT ROOT")
+        print("=" * 60)
+        print()
+        print("This will configure the project root for nested projects")
+        print("(when project-start is inside another project).")
+        print()
+
+        if not self.ask_yes_no("Continue with project root configuration?", True):
+            return
+
+        try:
+            self.configure_project_root()
+            print("\n✅ Project root configuration completed!")
+        except Exception as e:
+            print(f"\n❌ Configuration error: {e}")
+
+        input("\nPress Enter to return to main menu...")
+
+    def _show_help_documentation(self) -> None:
+        """Show help and documentation"""
+        print("\n" + "=" * 60)
+        print("❓ HELP & DOCUMENTATION")
+        print("=" * 60)
+        print()
+        print("🚀 PROJECT-START ENHANCED CLI")
+        print()
+        print("COMMAND LINE USAGE:")
+        print('python3 project_start_cli.py start "My new project"')
+        print(
+            'python3 project_start_cli.py /enhance-step-1 "Chat app" --existing-project'
+        )
+        print(
+            "python3 project_start_cli.py /enhance-step-2 --project-path specs/001-my-project"
+        )
+        print(
+            "python3 project_start_cli.py /enhance-step-3 --project-path specs/001-my-project"
+        )
+        print(
+            "python3 project_start_cli.py /enhance-step-4 --project-path specs/001-my-project"
+        )
+        print('python3 project_start_cli.py /project-start-enhanced "Full workflow"')
+        print("python3 project_start_cli.py /configure-project-root")
+        print()
+        print("AVAILABLE COMMANDS:")
+        print("• start                    - Interactive new project creation")
+        print("• /enhance-step-1          - Discovery and specification generation")
+        print("• /enhance-step-2          - SPARC planning methodology")
+        print("• /enhance-step-3          - Context systems creation")
+        print("• /enhance-step-4          - PACT framework deployment")
+        print("• /project-start-enhanced  - Complete 4-step workflow")
+        print("• /configure-project-root  - Configure project root")
+        print()
+        print("WORKFLOW STEPS:")
+        print("1. Step 1: Discovery & Specification")
+        print("   └─ Creates comprehensive project specifications")
+        print("2. Step 2: SPARC Planning")
+        print("   └─ Applies constitutional methodology for planning")
+        print("3. Step 3: Context Systems")
+        print("   └─ Sets up persistent context and expert systems")
+        print("4. Step 4: PACT Framework")
+        print("   └─ Deploys constitutional governance and coordination")
+        print()
+        print("AI INTEGRATION:")
+        print("• Gemini CLI integration for intelligent document generation")
+        print("• Fallback templates when AI tools are unavailable")
+        print("• Constitutional AI governance throughout workflow")
+        print()
+        print("For more information, see cli/README.md")
+
+        input("\nPress Enter to return to main menu...")
+
     def collect_project_info(self) -> Dict[str, Any]:
         """Interactive questionnaire to collect project information"""
         print("\n" + "=" * 60)
@@ -4255,7 +4539,7 @@ def main():
     parser = argparse.ArgumentParser(
         description="Project-Start Enhanced CLI with Gemini AI Integration"
     )
-    parser.add_argument("command", help="Command to execute")
+    parser.add_argument("command", nargs="?", help="Command to execute")
     parser.add_argument("description", nargs="?", help="Project description")
     parser.add_argument("--debug", action="store_true", help="Enable debug mode")
     parser.add_argument(
@@ -4264,9 +4548,10 @@ def main():
     parser.add_argument("--project-path", help="Specify project path")
     parser.add_argument("--ai", default="gemini", help="AI assistant to use")
 
-    # If no arguments provided, show help
+    # If no arguments provided, show interactive menu
     if len(sys.argv) == 1:
-        parser.print_help()
+        cli = ProjectStartCLI()
+        cli.show_interactive_menu()
         return
 
     args = parser.parse_args()
@@ -4307,6 +4592,8 @@ def main():
             print(
                 "python cli/project_start_cli.py /enhance-step-2 --project-path specs/001-my-project"
             )
+            print("\nOr run without arguments for interactive menu:")
+            print("python cli/project_start_cli.py")
 
     except KeyboardInterrupt:
         print("\n\n🛑 Operation cancelled by user")
